@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://kirilldi.github.io/sitemap.xml

@@ -5,12 +5,22 @@
     <link>https://kirilldi.github.io/post/</link>
       <atom:link href="https://kirilldi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 08 Oct 2022 19:27:59 +0300</lastBuildDate>
     <image>
       <url>https://kirilldi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://kirilldi.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Мой первый пост!</title>
+      <link>https://kirilldi.github.io/post/post-1/</link>
+      <pubDate>Sat, 08 Oct 2022 19:27:59 +0300</pubDate>
+      <guid>https://kirilldi.github.io/post/post-1/</guid>
+      <description>&lt;h1 id=&#34;это-мой-первый-пост&#34;&gt;Это мой первый пост&lt;/h1&gt;
+&lt;p&gt;Если вы читаете это сообщение, значит у меня получилось создать пост с помощью генератора сайтов Hugo и академичесокого шаблона Wowchemy&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Welcome to Wowchemy, the website builder for Hugo</title>

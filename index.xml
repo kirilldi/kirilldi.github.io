@@ -33,7 +33,7 @@
     </item>
     
     <item>
-      <title>Немного</title>
+      <title>Немного о системах управления версиями</title>
       <link>https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</link>
       <pubDate>Sat, 08 Oct 2022 19:43:24 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</guid>
@@ -60,15 +60,15 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.1. Локальные системы управления версиями.&#34; srcset=&#34;
-               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_2e754379d83046d4c4a2c89d20613368.webp 400w,
-               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_46632011a4d49f99fd9fea0569c28ee9.webp 760w,
+               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_b452b11bd368fef1ebf197128ff17523.webp 400w,
+               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_f68fb48e7be85c0944d4c550fb750c16.webp 760w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_2e754379d83046d4c4a2c89d20613368.webp&#34;
+               src=&#34;https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_b452b11bd368fef1ebf197128ff17523.webp&#34;
                width=&#34;760&#34;
                height=&#34;632&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-{ #fig:001 width=90% }&lt;/p&gt;
+{ рис.1. Локальные системы управления версиями. }&lt;/p&gt;
 &lt;h2 id=&#34;централизованные-системы-управления-версиями&#34;&gt;Централизованные системы управления версиями&lt;/h2&gt;
 &lt;p&gt;Следующей большой проблемой оказалась необходимость сотрудничать с разработчиками за другими компьютерами. Чтобы решить её, были созданы централизованные системы управления версиями (ЦСУВ). В таких системах, например CVS, Subversion и Perforce, есть центральный сервер, на котором хранятся все отслеживаемые файлы, и ряд клиентов, которые получают копии файлов из него. Много лет это был стандарт управления версиями.&lt;/p&gt;
 &lt;p&gt;
@@ -90,15 +90,15 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.2. Схема централизованного управления версиями.&#34; srcset=&#34;
-               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_adde3fde4c8e9c2ba53e642f2e25c083.webp 400w,
-               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_b7771d2181c9e4981835df80ae8760cf.webp 760w,
+               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_b6f124e8fc8e5c6ab02eef6dcb015026.webp 400w,
+               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_ed96aa46cd4b4ddff8f7e0b8a017515d.webp 760w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_adde3fde4c8e9c2ba53e642f2e25c083.webp&#34;
+               src=&#34;https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_b6f124e8fc8e5c6ab02eef6dcb015026.webp&#34;
                width=&#34;760&#34;
                height=&#34;594&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-{ #fig:002 width=90% }&lt;/p&gt;
+{ рис.2. Схема централизованного управления версиями. }&lt;/p&gt;
 &lt;p&gt;Такой подход имеет множество преимуществ, особенно над локальными СУВ. К примеру, все знают, кто и чем занимается в проекте. У администраторов есть чёткий контроль над тем, кто и что может делать, и, конечно, администрировать ЦСУВ гораздо легче, чем локальные базы на каждом клиенте. Однако при таком подходе есть и несколько серьёзных недостатков. Наиболее очевидный — централизованный сервер является уязвимым местом всей системы. Если сервер выключается на час, то в течение часа разработчики не могут взаимодействовать, и никто не может сохранить новые версии. Если же повреждается диск с центральной базой данных и нет резервной копии, вы теряете абсолютно всё — всю историю проекта, разве что за исключением нескольких рабочих версий, сохранившихся на рабочих машинах пользователей. Локальные системы управления версиями подвержены той же проблеме: если вся история проекта хранится в одном месте, вы рискуете потерять всё.&lt;/p&gt;
 &lt;h2 id=&#34;распределённые-системы-контроля-версий&#34;&gt;Распределённые системы контроля версий&lt;/h2&gt;
 &lt;p&gt;В такой ситуации в игру вступают распределенные системы управления версиями (РСУВ). В таких системах как Git, Mercurial, Bazaar или Darcs, клиенты не просто забирают последние версии файлов, а полностью копируют репозиторий. Поэтому в случае, когда “умирает” сервер, через который шла работа, любой клиентский репозиторий может быть скопирован обратно на сервер, чтобы восстановить базу данных. Каждый раз, когда клиент забирает свежую версию файлов, создаётся полная копия всех данных.&lt;/p&gt;
@@ -121,15 +121,15 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.3.  Схема распределенной системы управления версиями.&#34; srcset=&#34;
-               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_b20a03c800bac4d550ed527b4e0fa0d7.webp 400w,
-               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_843c148b7b52dc482bc0d5f0b9a83ba5.webp 760w,
+               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_9282ee28a5a6c590daba801b0b20ab8e.webp 400w,
+               /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_12e2121bc55397c4c4bc68f5c63f0021.webp 760w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_b20a03c800bac4d550ed527b4e0fa0d7.webp&#34;
+               src=&#34;https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_9282ee28a5a6c590daba801b0b20ab8e.webp&#34;
                width=&#34;702&#34;
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-{ #fig:003 width=90% }&lt;/p&gt;
+{ рис.3.  Схема распределенной системы управления версиями.}&lt;/p&gt;
 </description>
     </item>
     

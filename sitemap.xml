@@ -10,25 +10,15 @@
   <url>
     <loc>https://kirilldi.github.io/event/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://kirilldi.github.io/post/</loc><lastmod>2022-10-08T19:43:24+03:00</lastmod><changefreq>weekly</changefreq></url>
+    <loc>https://kirilldi.github.io/post/</loc><lastmod>2022-10-22T19:59:35+03:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://kirilldi.github.io/post/week2/</loc><lastmod>2022-10-22T19:59:35+03:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://kirilldi.github.io/post/latex/</loc><lastmod>2022-10-22T19:59:05+03:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</loc><lastmod>2022-10-08T19:43:24+03:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://kirilldi.github.io/post/post-1/</loc><lastmod>2022-10-08T19:27:59+03:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/tag/academic/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/categories/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/category/demo/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/tags/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/post/getting-started/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/tag/%E5%BC%80%E6%BA%90/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://kirilldi.github.io/category/%E6%95%99%E7%A8%8B/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://kirilldi.github.io/slides/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
@@ -40,10 +30,14 @@
   <url>
     <loc>https://kirilldi.github.io/project/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
+    <loc>https://kirilldi.github.io/tags/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
     <loc>https://kirilldi.github.io/publication-type/1/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://kirilldi.github.io/publication/example/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://kirilldi.github.io/publication_types/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://kirilldi.github.io/publication/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url></urlset>
+    <loc>https://kirilldi.github.io/publication/</loc><lastmod>2013-07-01T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://kirilldi.github.io/categories/</loc><changefreq>weekly</changefreq></url></urlset>

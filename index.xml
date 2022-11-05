@@ -33,7 +33,282 @@
     </item>
     
     <item>
-      <title>Вот как я улучшал сайт на прошлой неделе</title>
+      <title>Рецепт по приготовлению научной презентации с markdown и beamer</title>
+      <link>https://kirilldi.github.io/post/sci_presentation/</link>
+      <pubDate>Tue, 01 Nov 2022 17:03:35 +0300</pubDate>
+      <guid>https://kirilldi.github.io/post/sci_presentation/</guid>
+      <description>&lt;p&gt;В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.&lt;/p&gt;
+&lt;h2 id=&#34;актуальность&#34;&gt;Актуальность&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Важно донести результаты своих исследований до окружающих&lt;/li&gt;
+&lt;li&gt;Научная презентация &amp;mdash; рабочий инструмент исследователя&lt;/li&gt;
+&lt;li&gt;Необходимо создавать презентацию быстро&lt;/li&gt;
+&lt;li&gt;Желательна минимизация усилий для создания презентации&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;объект-и-предмет-исследования&#34;&gt;Объект и предмет исследования&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Презентация как текст&lt;/li&gt;
+&lt;li&gt;Программное обеспечение для создания презентаций&lt;/li&gt;
+&lt;li&gt;Входные и выходные форматы презентаций&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;цели-и-задачи&#34;&gt;Цели и задачи&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Создать шаблон презентации в Markdown&lt;/li&gt;
+&lt;li&gt;Описать алгоритм создания выходных форматов презентаций&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;материалы-и-методы&#34;&gt;Материалы и методы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Процессор &lt;code&gt;pandoc&lt;/code&gt; для входного формата Markdown&lt;/li&gt;
+&lt;li&gt;Результирующие форматы
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pdf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;html&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Автоматизация процесса создания: &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;создание-презентации&#34;&gt;Создание презентации&lt;/h1&gt;
+&lt;h2 id=&#34;процессор-pandoc&#34;&gt;Процессор &lt;code&gt;pandoc&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pandoc: преобразователь текстовых файлов&lt;/li&gt;
+&lt;li&gt;Сайт: &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pandoc.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Репозиторий: &lt;a href=&#34;https://github.com/jgm/pandoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/jgm/pandoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;формат-pdf&#34;&gt;Формат &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Использование LaTeX&lt;/li&gt;
+&lt;li&gt;Пакет для презентации: &lt;a href=&#34;https://ctan.org/pkg/beamer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;beamer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Тема оформления: &lt;code&gt;metropolis&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;код-для-формата-pdf&#34;&gt;Код для формата &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;slide_level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;aspectratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;169&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;section-titles&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;metropolis&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;формат-html&#34;&gt;Формат &lt;code&gt;html&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Используется фреймворк &lt;a href=&#34;https://revealjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reveal.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Используется &lt;a href=&#34;https://revealjs.com/themes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;тема&lt;/a&gt; &lt;code&gt;beige&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;код-для-формата-html&#34;&gt;Код для формата &lt;code&gt;html&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Тема задаётся в файле &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-make&#34; data-lang=&#34;make&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;REVEALJS_THEME&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; beige 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;результаты&#34;&gt;Результаты&lt;/h1&gt;
+&lt;h2 id=&#34;получающиеся-форматы&#34;&gt;Получающиеся форматы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Полученный &lt;code&gt;pdf&lt;/code&gt;-файл можно демонстрировать в любой программе просмотра &lt;code&gt;pdf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Полученный &lt;code&gt;html&lt;/code&gt;-файл содержит в себе все ресурсы: изображения, css, скрипты&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;элементы-презентации&#34;&gt;Элементы презентации&lt;/h1&gt;
+&lt;h2 id=&#34;актуальность-1&#34;&gt;Актуальность&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Даёт понять, о чём пойдёт речь&lt;/li&gt;
+&lt;li&gt;Следует широко и кратко описать проблему&lt;/li&gt;
+&lt;li&gt;Мотивировать свое исследование&lt;/li&gt;
+&lt;li&gt;Сформулировать цели и задачи&lt;/li&gt;
+&lt;li&gt;Возможна формулировка ожидаемых результатов&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;цели-и-задачи-1&#34;&gt;Цели и задачи&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Не формулируйте более 1&amp;ndash;2 целей исследования&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;материалы-и-методы-1&#34;&gt;Материалы и методы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Представляйте данные качественно&lt;/li&gt;
+&lt;li&gt;Количественно, только если крайне необходимо&lt;/li&gt;
+&lt;li&gt;Излишние детали не нужны&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;содержание-исследования&#34;&gt;Содержание исследования&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Предлагаемое решение задач исследования с обоснованием&lt;/li&gt;
+&lt;li&gt;Основные этапы работы&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;результаты-1&#34;&gt;Результаты&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Не нужны все результаты&lt;/li&gt;
+&lt;li&gt;Необходимы логические связки между слайдами&lt;/li&gt;
+&lt;li&gt;Необходимо показать понимание материала&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;итоговый-слайд&#34;&gt;Итоговый слайд&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Запоминается последняя фраза. © Штирлиц&lt;/li&gt;
+&lt;li&gt;Главное сообщение, которое вы хотите донести до слушателей&lt;/li&gt;
+&lt;li&gt;Избегайте использовать последний слайд вида &lt;em&gt;Спасибо за внимание&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;рекомендации&#34;&gt;Рекомендации&lt;/h1&gt;
+&lt;h2 id=&#34;принцип-102030&#34;&gt;Принцип 10/20/30&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;10 слайдов&lt;/li&gt;
+&lt;li&gt;20 минут на доклад&lt;/li&gt;
+&lt;li&gt;30 кегль шрифта&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;связь-слайдов&#34;&gt;Связь слайдов&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Один слайд &amp;mdash; одна мысль&lt;/li&gt;
+&lt;li&gt;Нельзя ссылаться на объекты, находящиеся на предыдущих слайдах (например, на формулы)&lt;/li&gt;
+&lt;li&gt;Каждый слайд должен иметь заголовок&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;количество-сущностей&#34;&gt;Количество сущностей&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Человек может одновременно помнить $7 \pm 2$ элемента&lt;/li&gt;
+&lt;li&gt;При размещении информации на слайде старайтесь чтобы в сумме слайд содержал не более 5 элементов&lt;/li&gt;
+&lt;li&gt;Можно группировать элементы так, чтобы визуально было не более 5 групп&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;общие-рекомендации&#34;&gt;Общие рекомендации&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;На слайд выносится та информация, которая без зрительной опоры воспринимается хуже&lt;/li&gt;
+&lt;li&gt;Слайды должны дополнять или обобщать содержание выступления или его частей, а не дублировать его&lt;/li&gt;
+&lt;li&gt;Информация на слайдах должна быть изложена кратко, чётко и хорошо структурирована&lt;/li&gt;
+&lt;li&gt;Слайд не должен быть перегружен графическими изображениями и текстом&lt;/li&gt;
+&lt;li&gt;Не злоупотребляйте анимацией и переходами&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;представление-данных&#34;&gt;Представление данных&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Лучше представить в виде схемы&lt;/li&gt;
+&lt;li&gt;Менее оптимально представить в виде рисунка, графика, таблицы&lt;/li&gt;
+&lt;li&gt;Текст используется, если все предыдущие способы отображения информации не подошли&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Вот как я улучшал сайт на прошлой неделе (3 этап)</title>
+      <link>https://kirilldi.github.io/post/week3/</link>
+      <pubDate>Sun, 30 Oct 2022 18:49:46 +0300</pubDate>
+      <guid>https://kirilldi.github.io/post/week3/</guid>
+      <description>&lt;h1 id=&#34;цель-работы&#34;&gt;Цель работы&lt;/h1&gt;
+&lt;p&gt;Создания контента для персонализации шаблона сайта для научной коммуникации.&lt;/p&gt;
+&lt;h1 id=&#34;задание&#34;&gt;Задание&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Добавить к сайту достижения.&lt;/li&gt;
+&lt;li&gt;Создать пост по прошлой неделе.&lt;/li&gt;
+&lt;li&gt;Создать пост о легковесных языках разметки&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;теоретическое-введение&#34;&gt;Теоретическое введение&lt;/h1&gt;
+&lt;p&gt;Личный блог является важным инструментов в научной коммуникации. Он позволяет получить доступ к научным работам, связаться с автором и получить общее впечатление о нем.&lt;/p&gt;
+&lt;p&gt;Для создания блога воспользуемся следующими инструментами:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;github&lt;/li&gt;
+&lt;li&gt;github pages в качестве хостинга&lt;/li&gt;
+&lt;li&gt;hugo (программа с шаблонами для быстрого создания сайтов)&lt;/li&gt;
+&lt;li&gt;Wowchemy (подборка  тем для hugo)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;выполнение-лабораторной-работы&#34;&gt;Выполнение лабораторной работы&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Найдем папку /content/home/ и внесем необходимые изменения в файлы соответствующие нужному блоку шаблона. Нас интересует раздел skills, activities and experience (рис. [-@fig:001]).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Содержимое content/home&#34; srcset=&#34;
+               /post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_ea3f5bc393073ae26789eb8713351a7f.webp 400w,
+               /post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_cee1f47c95986264f6d01ac843cc5cfb.webp 760w,
+               /post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_ea3f5bc393073ae26789eb8713351a7f.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;372&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает! (рис. [-@fig:002]).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Изменения на сайте&#34; srcset=&#34;
+               /post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_87ae16612dfdc4ce1b17d50cff7f02f3.webp 400w,
+               /post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_0cca85ecee788c569053e8d1c07bee13.webp 760w,
+               /post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_87ae16612dfdc4ce1b17d50cff7f02f3.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;269&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Создадим новый пост командой hugo new -kind post post/your-post-name. Он добавится в папку content/post.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает! (рис. [-@fig:003]).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+               /post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_b9945da0af01c4e6364418303949c1ac.webp 400w,
+               /post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_7c53620b6f0083569e4d58ad6049705a.webp 760w,
+               /post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_b9945da0af01c4e6364418303949c1ac.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;420&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;выводы&#34;&gt;Выводы&lt;/h1&gt;
+&lt;p&gt;В результате работы мы имеем персонализированный шаблон сайта на github pages. В дальнейшем мы будем его редактировать.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Вот как я улучшал сайт на прошлой неделе (этап 2)</title>
       <link>https://kirilldi.github.io/post/week2/</link>
       <pubDate>Sat, 22 Oct 2022 19:59:35 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/week2/</guid>

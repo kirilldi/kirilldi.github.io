@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Academic</title>
+    <title>Posts | K.V. Didus academic web-blog</title>
     <link>https://kirilldi.github.io/post/</link>
       <atom:link href="https://kirilldi.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
@@ -13,179 +13,176 @@
     </image>
     
     <item>
-      <title>Рецепт по приготовлению научной презентации с markdown и beamer</title>
+      <title>How to make scientific presentations with markdown and beamer</title>
       <link>https://kirilldi.github.io/post/sci_presentation/</link>
       <pubDate>Tue, 01 Nov 2022 17:03:35 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/sci_presentation/</guid>
-      <description>&lt;p&gt;В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.&lt;/p&gt;
-&lt;h2 id=&#34;актуальность&#34;&gt;Актуальность&lt;/h2&gt;
+      <description>&lt;p&gt;In this article, we will look at the structure and useful constructs for designing a scientific presentation in Markdown.&lt;/p&gt;
+&lt;h2 id=&#34;relevance&#34;&gt;Relevance&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Важно донести результаты своих исследований до окружающих&lt;/li&gt;
-&lt;li&gt;Научная презентация &amp;mdash; рабочий инструмент исследователя&lt;/li&gt;
-&lt;li&gt;Необходимо создавать презентацию быстро&lt;/li&gt;
-&lt;li&gt;Желательна минимизация усилий для создания презентации&lt;/li&gt;
+&lt;li&gt;It is important to communicate the results of your research to others&lt;/li&gt;
+&lt;li&gt;Scientific presentation &amp;mdash; researcher&amp;rsquo;s working tool&lt;/li&gt;
+&lt;li&gt;Need to create a presentation quickly&lt;/li&gt;
+&lt;li&gt;It is desirable to minimize the effort to create a presentation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;объект-и-предмет-исследования&#34;&gt;Объект и предмет исследования&lt;/h2&gt;
+&lt;h2 id=&#34;object-and-subject-of-research&#34;&gt;Object and subject of research&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Презентация как текст&lt;/li&gt;
-&lt;li&gt;Программное обеспечение для создания презентаций&lt;/li&gt;
-&lt;li&gt;Входные и выходные форматы презентаций&lt;/li&gt;
+&lt;li&gt;Presentation as text&lt;/li&gt;
+&lt;li&gt;Software for creating presentations&lt;/li&gt;
+&lt;li&gt;Input and output presentation formats&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;цели-и-задачи&#34;&gt;Цели и задачи&lt;/h2&gt;
+&lt;h2 id=&#34;targets-and-goals&#34;&gt;Targets and goals&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Создать шаблон презентации в Markdown&lt;/li&gt;
-&lt;li&gt;Описать алгоритм создания выходных форматов презентаций&lt;/li&gt;
+&lt;li&gt;Create presentation template in Markdown&lt;/li&gt;
+&lt;li&gt;Describe the algorithm for creating output presentation formats&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;материалы-и-методы&#34;&gt;Материалы и методы&lt;/h2&gt;
+&lt;h2 id=&#34;materials-and-methods&#34;&gt;Materials and methods&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Процессор &lt;code&gt;pandoc&lt;/code&gt; для входного формата Markdown&lt;/li&gt;
-&lt;li&gt;Результирующие форматы
-&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pandoc&lt;/code&gt; processor for Markdown input format&lt;/li&gt;
+&lt;li&gt;Resulting formats&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pdf&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;html&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Automation of the creation process: &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Автоматизация процесса создания: &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;создание-презентации&#34;&gt;Создание презентации&lt;/h1&gt;
-&lt;h2 id=&#34;процессор-pandoc&#34;&gt;Процессор &lt;code&gt;pandoc&lt;/code&gt;&lt;/h2&gt;
+&lt;h1 id=&#34;create-a-presentation&#34;&gt;Create a presentation&lt;/h1&gt;
+&lt;h2 id=&#34;processor-pandoc&#34;&gt;Processor &lt;code&gt;pandoc&lt;/code&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Pandoc: преобразователь текстовых файлов&lt;/li&gt;
-&lt;li&gt;Сайт: &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pandoc.org/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Репозиторий: &lt;a href=&#34;https://github.com/jgm/pandoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/jgm/pandoc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pandoc: text file converter&lt;/li&gt;
+&lt;li&gt;Website: &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pandoc.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Repository: &lt;a href=&#34;https://github.com/jgm/pandoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/jgm/pandoc&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;формат-pdf&#34;&gt;Формат &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;format-pdf&#34;&gt;Format &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Использование LaTeX&lt;/li&gt;
-&lt;li&gt;Пакет для презентации: &lt;a href=&#34;https://ctan.org/pkg/beamer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;beamer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Тема оформления: &lt;code&gt;metropolis&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Using LaTeX&lt;/li&gt;
+&lt;li&gt;Presentation package: &lt;a href=&#34;https://ctan.org/pkg/beamer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;beamer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Theme: &lt;code&gt;metropolis&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;код-для-формата-pdf&#34;&gt;Код для формата &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;code-for-pdf-format&#34;&gt;Code for &lt;code&gt;pdf&lt;/code&gt; format&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;slide_level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;aspectratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;169&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;aspect ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;169&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;section-titles&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;metropolis&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;формат-html&#34;&gt;Формат &lt;code&gt;html&lt;/code&gt;&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;html-format&#34;&gt;&lt;code&gt;html&lt;/code&gt; format&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Используется фреймворк &lt;a href=&#34;https://revealjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reveal.js&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Используется &lt;a href=&#34;https://revealjs.com/themes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;тема&lt;/a&gt; &lt;code&gt;beige&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Used framework &lt;a href=&#34;https://revealjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reveal.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Used &lt;a href=&#34;https://revealjs.com/themes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;theme&lt;/a&gt; &lt;code&gt;beige&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;код-для-формата-html&#34;&gt;Код для формата &lt;code&gt;html&lt;/code&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;code-for-html-format&#34;&gt;Code for &lt;code&gt;html&lt;/code&gt; format&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Тема задаётся в файле &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;The theme is set in the &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-make&#34; data-lang=&#34;make&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;REVEALJS_THEME&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; beige 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;результаты&#34;&gt;Результаты&lt;/h1&gt;
-&lt;h2 id=&#34;получающиеся-форматы&#34;&gt;Получающиеся форматы&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-make&#34; data-lang=&#34;make&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;REVEALJS_THEME&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; beige
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;results&#34;&gt;Results&lt;/h1&gt;
+&lt;h2 id=&#34;resulting-formats&#34;&gt;resulting formats&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Полученный &lt;code&gt;pdf&lt;/code&gt;-файл можно демонстрировать в любой программе просмотра &lt;code&gt;pdf&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Полученный &lt;code&gt;html&lt;/code&gt;-файл содержит в себе все ресурсы: изображения, css, скрипты&lt;/li&gt;
+&lt;li&gt;The resulting &lt;code&gt;pdf&lt;/code&gt; file can be displayed in any &lt;code&gt;pdf&lt;/code&gt; viewer&lt;/li&gt;
+&lt;li&gt;The resulting &lt;code&gt;html&lt;/code&gt;-file contains all the resources: images, css, scripts&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;элементы-презентации&#34;&gt;Элементы презентации&lt;/h1&gt;
-&lt;h2 id=&#34;актуальность-1&#34;&gt;Актуальность&lt;/h2&gt;
+&lt;h1 id=&#34;presentation-elements&#34;&gt;Presentation elements&lt;/h1&gt;
+&lt;h2 id=&#34;relevance-1&#34;&gt;Relevance&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Даёт понять, о чём пойдёт речь&lt;/li&gt;
-&lt;li&gt;Следует широко и кратко описать проблему&lt;/li&gt;
-&lt;li&gt;Мотивировать свое исследование&lt;/li&gt;
-&lt;li&gt;Сформулировать цели и задачи&lt;/li&gt;
-&lt;li&gt;Возможна формулировка ожидаемых результатов&lt;/li&gt;
+&lt;li&gt;Makes it clear what is going on&lt;/li&gt;
+&lt;li&gt;Describe the problem broadly and concisely&lt;/li&gt;
+&lt;li&gt;Motivate your research&lt;/li&gt;
+&lt;li&gt;Formulate goals and objectives&lt;/li&gt;
+&lt;li&gt;Possible formulation of expected results&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;цели-и-задачи-1&#34;&gt;Цели и задачи&lt;/h2&gt;
+&lt;h2 id=&#34;targets-and-goals-1&#34;&gt;Targets and goals&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Не формулируйте более 1&amp;ndash;2 целей исследования&lt;/li&gt;
+&lt;li&gt;Do not formulate more than 1-2 research objectives&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;материалы-и-методы-1&#34;&gt;Материалы и методы&lt;/h2&gt;
+&lt;h2 id=&#34;materials-and-methods-1&#34;&gt;Materials and methods&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Представляйте данные качественно&lt;/li&gt;
-&lt;li&gt;Количественно, только если крайне необходимо&lt;/li&gt;
-&lt;li&gt;Излишние детали не нужны&lt;/li&gt;
+&lt;li&gt;Present data qualitatively&lt;/li&gt;
+&lt;li&gt;Quantitatively, only if absolutely necessary&lt;/li&gt;
+&lt;li&gt;No extra parts needed&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;содержание-исследования&#34;&gt;Содержание исследования&lt;/h2&gt;
+&lt;h2 id=&#34;research-content&#34;&gt;Research content&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Предлагаемое решение задач исследования с обоснованием&lt;/li&gt;
-&lt;li&gt;Основные этапы работы&lt;/li&gt;
+&lt;li&gt;The proposed solution to the research problems with justification&lt;/li&gt;
+&lt;li&gt;Main stages of work&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;результаты-1&#34;&gt;Результаты&lt;/h2&gt;
+&lt;h2 id=&#34;results-1&#34;&gt;Results&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Не нужны все результаты&lt;/li&gt;
-&lt;li&gt;Необходимы логические связки между слайдами&lt;/li&gt;
-&lt;li&gt;Необходимо показать понимание материала&lt;/li&gt;
+&lt;li&gt;Do not need all the results&lt;/li&gt;
+&lt;li&gt;Requires logical links between slides&lt;/li&gt;
+&lt;li&gt;Must show understanding of the material&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;итоговый-слайд&#34;&gt;Итоговый слайд&lt;/h2&gt;
+&lt;h2 id=&#34;summary-slide&#34;&gt;Summary slide&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Запоминается последняя фраза. © Штирлиц&lt;/li&gt;
-&lt;li&gt;Главное сообщение, которое вы хотите донести до слушателей&lt;/li&gt;
-&lt;li&gt;Избегайте использовать последний слайд вида &lt;em&gt;Спасибо за внимание&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;The last phrase is remembered. © Stirlitz&lt;/li&gt;
+&lt;li&gt;The main message you want to convey to your listeners&lt;/li&gt;
+&lt;li&gt;Avoid using the last slide like &lt;em&gt;Thank you for your attention&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;рекомендации&#34;&gt;Рекомендации&lt;/h1&gt;
-&lt;h2 id=&#34;принцип-102030&#34;&gt;Принцип 10/20/30&lt;/h2&gt;
+&lt;h1 id=&#34;recommendations&#34;&gt;Recommendations&lt;/h1&gt;
+&lt;h2 id=&#34;principle-102030&#34;&gt;Principle 10/20/30&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;10 слайдов&lt;/li&gt;
-&lt;li&gt;20 минут на доклад&lt;/li&gt;
-&lt;li&gt;30 кегль шрифта&lt;/li&gt;
+&lt;li&gt;10 slides&lt;/li&gt;
+&lt;li&gt;20 minutes for presentation&lt;/li&gt;
+&lt;li&gt;30 font size&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;связь-слайдов&#34;&gt;Связь слайдов&lt;/h2&gt;
+&lt;h2 id=&#34;link-slides&#34;&gt;Link slides&lt;/h2&gt;
 &lt;p&gt;::: incremental&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Один слайд &amp;mdash; одна мысль&lt;/li&gt;
-&lt;li&gt;Нельзя ссылаться на объекты, находящиеся на предыдущих слайдах (например, на формулы)&lt;/li&gt;
-&lt;li&gt;Каждый слайд должен иметь заголовок&lt;/li&gt;
+&lt;li&gt;One slide &amp;mdash; one thought&lt;/li&gt;
+&lt;li&gt;You can not refer to objects that are on previous slides (for example, formulas)&lt;/li&gt;
+&lt;li&gt;Each slide must have a title&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;:::&lt;/p&gt;
-&lt;h2 id=&#34;количество-сущностей&#34;&gt;Количество сущностей&lt;/h2&gt;
+&lt;h2 id=&#34;number-of-entities&#34;&gt;Number of entities&lt;/h2&gt;
 &lt;p&gt;::: incremental&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Человек может одновременно помнить $7 \pm 2$ элемента&lt;/li&gt;
-&lt;li&gt;При размещении информации на слайде старайтесь чтобы в сумме слайд содержал не более 5 элементов&lt;/li&gt;
-&lt;li&gt;Можно группировать элементы так, чтобы визуально было не более 5 групп&lt;/li&gt;
+&lt;li&gt;A person can remember $7 \pm 2$ elements at the same time&lt;/li&gt;
+&lt;li&gt;When placing information on a slide, try to make the slide contain no more than 5 elements in total&lt;/li&gt;
+&lt;li&gt;You can group elements so that visually there are no more than 5 groups&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;:::&lt;/p&gt;
-&lt;h2 id=&#34;общие-рекомендации&#34;&gt;Общие рекомендации&lt;/h2&gt;
+&lt;h2 id=&#34;general-recommendations&#34;&gt;General recommendations&lt;/h2&gt;
 &lt;p&gt;::: incremental&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;На слайд выносится та информация, которая без зрительной опоры воспринимается хуже&lt;/li&gt;
-&lt;li&gt;Слайды должны дополнять или обобщать содержание выступления или его частей, а не дублировать его&lt;/li&gt;
-&lt;li&gt;Информация на слайдах должна быть изложена кратко, чётко и хорошо структурирована&lt;/li&gt;
-&lt;li&gt;Слайд не должен быть перегружен графическими изображениями и текстом&lt;/li&gt;
-&lt;li&gt;Не злоупотребляйте анимацией и переходами&lt;/li&gt;
+&lt;li&gt;Information that is perceived worse without visual support is placed on the slide&lt;/li&gt;
+&lt;li&gt;Slides should complement or summarize the content of the speech or its parts, and not duplicate it&lt;/li&gt;
+&lt;li&gt;Information on slides should be concise, clear and well structured&lt;/li&gt;
+&lt;li&gt;The slide should not be overloaded with graphics and text&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t overuse animations and transitions&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;:::&lt;/p&gt;
-&lt;h2 id=&#34;представление-данных&#34;&gt;Представление данных&lt;/h2&gt;
+&lt;h2 id=&#34;data-representation&#34;&gt;Data representation&lt;/h2&gt;
 &lt;p&gt;::: incremental&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Лучше представить в виде схемы&lt;/li&gt;
-&lt;li&gt;Менее оптимально представить в виде рисунка, графика, таблицы&lt;/li&gt;
-&lt;li&gt;Текст используется, если все предыдущие способы отображения информации не подошли&lt;/li&gt;
+&lt;li&gt;It is better to present in the form of a diagram&lt;/li&gt;
+&lt;li&gt;Less optimal to present in the form of a picture, graph, table&lt;/li&gt;
+&lt;li&gt;Text is used if all previous ways of displaying information did not fit&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;:::&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Вот как я улучшал сайт на прошлой неделе (3 этап)</title>
+      <title>Here&#39;s How I Improved the Website Last Week (Stage 3)</title>
       <link>https://kirilldi.github.io/post/week3/</link>
       <pubDate>Sun, 30 Oct 2022 18:49:46 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/week3/</guid>
-      <description>&lt;h1 id=&#34;цель-работы&#34;&gt;Цель работы&lt;/h1&gt;
-&lt;p&gt;Создания контента для персонализации шаблона сайта для научной коммуникации.&lt;/p&gt;
-&lt;h1 id=&#34;задание&#34;&gt;Задание&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;objective&#34;&gt;Objective&lt;/h1&gt;
+&lt;p&gt;Creating content to personalize the site template for scientific communication.&lt;/p&gt;
+&lt;h1 id=&#34;exercise&#34;&gt;Exercise&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Добавить к сайту достижения.&lt;/li&gt;
-&lt;li&gt;Создать пост по прошлой неделе.&lt;/li&gt;
-&lt;li&gt;Создать пост о легковесных языках разметки&lt;/li&gt;
+&lt;li&gt;Add achievements to the site.&lt;/li&gt;
+&lt;li&gt;Create a post from last week.&lt;/li&gt;
+&lt;li&gt;Create a post about lightweight markup languages&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;теоретическое-введение&#34;&gt;Теоретическое введение&lt;/h1&gt;
-&lt;p&gt;Личный блог является важным инструментов в научной коммуникации. Он позволяет получить доступ к научным работам, связаться с автором и получить общее впечатление о нем.&lt;/p&gt;
-&lt;p&gt;Для создания блога воспользуемся следующими инструментами:&lt;/p&gt;
+&lt;h1 id=&#34;theoretical-introduction&#34;&gt;Theoretical introduction&lt;/h1&gt;
+&lt;p&gt;A personal blog is an important tool in scientific communication. It allows you to access scientific papers, contact the author and get a general impression of him.&lt;/p&gt;
+&lt;p&gt;To create a blog, we will use the following tools:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;github&lt;/li&gt;
-&lt;li&gt;github pages в качестве хостинга&lt;/li&gt;
-&lt;li&gt;hugo (программа с шаблонами для быстрого создания сайтов)&lt;/li&gt;
-&lt;li&gt;Wowchemy (подборка  тем для hugo)&lt;/li&gt;
+&lt;li&gt;github pages as hosting&lt;/li&gt;
+&lt;li&gt;hugo (a program with templates for quickly creating websites)&lt;/li&gt;
+&lt;li&gt;Wowchemy (hugo theme collection)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;выполнение-лабораторной-работы&#34;&gt;Выполнение лабораторной работы&lt;/h1&gt;
+&lt;h1 id=&#34;performing-the-lab&#34;&gt;Performing the lab&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Найдем папку /content/home/ и внесем необходимые изменения в файлы соответствующие нужному блоку шаблона. Нас интересует раздел skills, activities and experience (рис. [-@fig:001]).&lt;/li&gt;
+&lt;li&gt;Find the /content/home/ folder and make the necessary changes to the files corresponding to the desired template block. We are interested in the skills, activities and experience section (fig. [-@fig:001]).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
 
@@ -205,7 +202,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Содержимое content/home&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Content/home&#34; srcset=&#34;
                /post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_ea3f5bc393073ae26789eb8713351a7f.webp 400w,
                /post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_cee1f47c95986264f6d01ac843cc5cfb.webp 760w,
                /post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -216,7 +213,7 @@
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает! (рис. [-@fig:002]).&lt;/li&gt;
+&lt;li&gt;Let&amp;rsquo;s commit the changes to the appropriate repositories and launch the site with the hugo command. Then we will check the functionality of the site. Everything is working! (fig. [-@fig:002]).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
 
@@ -236,7 +233,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Изменения на сайте&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Site Changes&#34; srcset=&#34;
                /post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_87ae16612dfdc4ce1b17d50cff7f02f3.webp 400w,
                /post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_0cca85ecee788c569053e8d1c07bee13.webp 760w,
                /post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -248,10 +245,10 @@
 &lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Создадим новый пост командой hugo new -kind post post/your-post-name. Он добавится в папку content/post.&lt;/p&gt;
+&lt;p&gt;Create a new post with the hugo new -kind post post/your-post-name command. It will be added to the content/post folder.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает! (рис. [-@fig:003]).&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s commit the changes to the appropriate repositories and launch the site with the hugo command. Then we will check the functionality of the site. Everything is working! (fig. [-@fig:003]).&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
@@ -272,7 +269,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;site changes&#34; srcset=&#34;
                /post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_b9945da0af01c4e6364418303949c1ac.webp 400w,
                /post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_7c53620b6f0083569e4d58ad6049705a.webp 760w,
                /post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -282,36 +279,36 @@
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;h1 id=&#34;выводы&#34;&gt;Выводы&lt;/h1&gt;
-&lt;p&gt;В результате работы мы имеем персонализированный шаблон сайта на github pages. В дальнейшем мы будем его редактировать.&lt;/p&gt;
+&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;As a result of the work, we have a personalized website template on github pages. We will edit it later.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Вот как я улучшал сайт на прошлой неделе (этап 2)</title>
+      <title>Here&#39;s How I Improved the Website Last Week (Phase 2)</title>
       <link>https://kirilldi.github.io/post/week2/</link>
       <pubDate>Sat, 22 Oct 2022 19:59:35 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/week2/</guid>
-      <description>&lt;h1 id=&#34;цель-работы&#34;&gt;Цель работы&lt;/h1&gt;
-&lt;p&gt;Создания контента для персонализации шаблона сайта для научной коммуникации.&lt;/p&gt;
-&lt;h1 id=&#34;задание&#34;&gt;Задание&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;objective&#34;&gt;Objective&lt;/h1&gt;
+&lt;p&gt;Creating content to personalize the site template for scientific communication.&lt;/p&gt;
+&lt;h1 id=&#34;exercise&#34;&gt;Exercise&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;Обновить личные данные&lt;/li&gt;
-&lt;li&gt;Создать первый пост&lt;/li&gt;
-&lt;li&gt;Создать пост о системе управления версиями&lt;/li&gt;
+&lt;li&gt;Update personal data&lt;/li&gt;
+&lt;li&gt;Create first post&lt;/li&gt;
+&lt;li&gt;Create a post about the version control system&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;теоретическое-введение&#34;&gt;Теоретическое введение&lt;/h1&gt;
-&lt;p&gt;Личный блог является важным инструментов в научной коммуникации. Он позволяет получить доступ к научным работам, связаться с автором и получить общее впечатление о нем.&lt;/p&gt;
-&lt;p&gt;Для создания блога воспользуемся следующими инструментами:&lt;/p&gt;
+&lt;h1 id=&#34;theoretical-introduction&#34;&gt;Theoretical introduction&lt;/h1&gt;
+&lt;p&gt;A personal blog is an important tool in scientific communication. It allows you to access scientific papers, contact the author and get a general impression of him.&lt;/p&gt;
+&lt;p&gt;To create a blog, we will use the following tools:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;github&lt;/li&gt;
-&lt;li&gt;github pages в качестве хостинга&lt;/li&gt;
-&lt;li&gt;hugo (программа с шаблонами для быстрого создания сайтов)&lt;/li&gt;
-&lt;li&gt;Wowchemy (подборка  тем для hugo)&lt;/li&gt;
+&lt;li&gt;github pages as hosting&lt;/li&gt;
+&lt;li&gt;hugo (a program with templates for quickly creating websites)&lt;/li&gt;
+&lt;li&gt;Wowchemy (hugo theme collection)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;выполнение-лабораторной-работы&#34;&gt;Выполнение лабораторной работы&lt;/h1&gt;
+&lt;h1 id=&#34;performing-the-lab&#34;&gt;Performing the lab&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Найдем папку /content/authors/admin и внесем необходимые изменения в файл &lt;em&gt;index.md&lt;/em&gt;. Он представляет собой шаблон визитной карточки сайта.&lt;/li&gt;
+&lt;li&gt;Find the /content/authors/admin folder and make the necessary changes to the &lt;em&gt;index.md&lt;/em&gt; file. It is a website business card template.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
 
@@ -331,7 +328,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Содержание шаблона визитной карточки сайта&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Contents of the website business card template&#34; srcset=&#34;
                /post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_d0e42c4a6e40ac11a10b7c08ffdf7929.webp 400w,
                /post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_fa6bd9c95bf7a874d622077e35a847ef.webp 760w,
                /post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -342,7 +339,7 @@
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Добавим изображение в папку admin и назовем его avatar.&lt;/li&gt;
+&lt;li&gt;Add an image to the admin folder and name it avatar.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
 
@@ -373,7 +370,7 @@
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает!.&lt;/li&gt;
+&lt;li&gt;Let&amp;rsquo;s commit the changes to the appropriate repositories and launch the site with the hugo command. Then we will check the functionality of the site. Everything is working!.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
 
@@ -393,7 +390,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;site changes&#34; srcset=&#34;
                /post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_080b0d0e6ed01f532ad53caa092b408b.webp 400w,
                /post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_32666fe7bada2d8beccf9b3b7001c3a5.webp 760w,
                /post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -405,10 +402,10 @@
 &lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;Создадим новый пост командой hugo new &amp;ndash;kind post post/your-post-name. Он добавится в папку content/post.&lt;/p&gt;
+&lt;p&gt;Create a new post with hugo new &amp;ndash;kind post post/your-post-name. It will be added to the content/post folder.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает!.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s commit the changes to the appropriate repositories and launch the site with the hugo command. Then we will check the functionality of the site. Everything is working!.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
@@ -429,7 +426,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;site changes&#34; srcset=&#34;
                /post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_bc46652b9b36303f463c4c264287738e.webp 400w,
                /post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_0c98d02638b67432d468903b1fb47843.webp 760w,
                /post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -439,52 +436,52 @@
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
 &lt;/p&gt;
-&lt;h1 id=&#34;выводы&#34;&gt;Выводы&lt;/h1&gt;
-&lt;p&gt;В результате работы мы имеем персонализированный шаблон сайта на github pages. В дальнейшем мы будем его редактировать.&lt;/p&gt;
+&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;As a result of the work, we have a personalized website template on github pages. We will edit it later.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Математики, как супергерои - им тоже нужен латекс.</title>
+      <title>Mathematicians are like superheroes - they need latex too.</title>
       <link>https://kirilldi.github.io/post/latex/</link>
       <pubDate>Sat, 22 Oct 2022 19:59:05 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/latex/</guid>
-      <description>&lt;h2 id=&#34;введение&#34;&gt;Введение&lt;/h2&gt;
-&lt;p&gt;В статье мы рассмотрим следующие темы:&lt;/p&gt;
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this article, we will cover the following topics:&lt;/p&gt;
+&lt;p&gt;What are markup languages ​​and why are they needed?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Что такое языки разметки и зачем они нужны?&lt;/li&gt;
-&lt;li&gt;Что такое LaTex?&lt;/li&gt;
-&lt;li&gt;В чем особенность LaTex?&lt;/li&gt;
+&lt;li&gt;What is Latex?&lt;/li&gt;
+&lt;li&gt;What is special about LaTeX?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;что-такое-языки-разметки-и-зачем-они-нужны&#34;&gt;Что такое языки разметки и зачем они нужны?&lt;/h2&gt;
-&lt;p&gt;Язы́к разме́тки (текста) в компьютерной терминологии — набор символов или последовательностей символов, вставляемых в текст для передачи информации о его отображении или строении. Принадлежит классу компьютерных языков. Текстовый документ, написанный с использованием языка разметки, содержит не только сам текст (как последовательность слов и знаков препинания), но и дополнительную информацию о различных его участках — например, указание на заголовки, выделения, списки и т. д. В более сложных случаях язык разметки позволяет вставлять в документ интерактивные элементы и содержание других документов.&lt;/p&gt;
-&lt;h2 id=&#34;что-такое-latex&#34;&gt;Что такое LaTex?&lt;/h2&gt;
-&lt;p&gt;Что же такое LATEX? Если коротко, то это издательская система на базе TEX’а. Система компьютерной верстки TEX (произносится «тех») была создана выдающимся американским математиком и программистом Дональдом Кнутом в конце 70-х годов XX века; издательские системы на ее базе по сию пору широко используются и сдавать позиции не собираются. Вот краткий перечень TEX’овских достоинств:&lt;/p&gt;
-&lt;p&gt;Никакая другая из существующих в настоящее время издательских систем не может сравниться с TEX’ом в полиграфическом качестве текстов с математическими формулами.
-Система TEX реализована на всех современных компьютерных платформах, и все эти реализации действительно работают одинаково.
-Благодаря этому TEX стал международным языком для обмена математическими и физическими статьями: набрав свою статью в TEX’е, математик может послать ее по электронной почте своему коллеге, даже если отправитель работает под Windows, а получатель — с UNIX’ом или, допустим, на Макинтоше.
-В Интернете существуют обширные «архивы препринтов», в которые каждый может послать (и из которых каждый может получить) статью; все эти статьи набраны опять-таки в TEX’е.&lt;/p&gt;
-&lt;p&gt;Наконец, основные реализации TEX’а для всех платформ распространяются бесплатно.
-Как уже отмечалось TEX — это созданная американским математиком и программистом Дональдом Кнутом (Donald E. Knuth) система для верстки текстов с формулами. Сам по себе TEX представляет собой специализированный язык программирования (Кнут не только придумал язык, но и написал для него транслятор, причем таким образом, что он работает совершенно одинаково на самых разных компьютерах), на котором пишутся издательские системы, используемые на практике. Точнее говоря, каждая издательская система на базе TEX’а представляет собой пакет макроопределений (макропакет) этого языка. В частности, LATEX (произносится «латех» или «лэйтех», пишется также «LaTeX») — это созданная Лесли Лэмпортом (Leslie Lamport) издательская система на базе TEX’а.&lt;/p&gt;
-&lt;h2 id=&#34;что-особенного-в-latex&#34;&gt;Что особенного в LaTex?&lt;/h2&gt;
-&lt;p&gt;Этот инструмент используется повсеместно для создания научных документов, написания книг, а также многих других форм публикаций. Он позволяет не только создавать красиво оформленные документы, но также дает пользователям возможность очень быстро реализовывать такие сложные элементы печатного набора, как математические выражения, таблицы, ссылки и библиографии, получая согласованную разметку по всем разделам.&lt;/p&gt;
-&lt;p&gt;Благодаря доступности большого числа открытых библиотек (об этом чуть позже) возможности LaTEX становятся практически безграничны. Эти библиотеки расширяют возможности пользователей еще больше, позволяя добавлять сноски, рисовать схемы и пр.&lt;/p&gt;
-&lt;p&gt;Одна из наиболее веских причин, по которой многие используют LaTeX, заключается в отделении содержания документа от его стиля. Это означает, что после написания содержимого, можно с легкостью изменять его внешний вид. Аналогичным образом, можно создать один стиль документа и использовать его для стандартизации внешнего вида других.&lt;/p&gt;
-&lt;p&gt;Это позволяет научным журналам создавать шаблоны для предлагаемых на рассмотрение материалов. Такие шаблоны имеют заданную разметку, в результате чего добавить остается лишь содержание. На деле существуют сотни подобных шаблонов, начиная с различных резюме и заканчивая презентациями слайдов&lt;/p&gt;
-&lt;h2 id=&#34;выводы&#34;&gt;Выводы&lt;/h2&gt;
-&lt;p&gt;LaTex - удобный и простой в использовании язык разметки. С помощью него можно создавать стандартизированные статьи и книги, он упрощает работу с текстовыми файлами благодаря возможности создания автоматического оглавления, списка литературы и прочих разделов, которые могут быть необходимы. У него огромное количество плюсов, его возможности практически безграничны благодаря большому количеству открытых библиотек.&lt;/p&gt;
+&lt;h2 id=&#34;what-are-markup-languages-and-why-are-they-needed&#34;&gt;What are markup languages ​​and why are they needed?&lt;/h2&gt;
+&lt;p&gt;A markup language (text) in computer terminology is a set of characters or sequences of characters inserted into text to convey information about its display or structure. It belongs to the class of computer languages. A text document written using a markup language contains not only the text itself (as a sequence of words and punctuation marks), but also additional information about its various sections - for example, an indication of headings, highlights, lists, etc. In more complex cases A markup language allows you to insert interactive elements and content from other documents into a document.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-latex&#34;&gt;What is LaTeX?&lt;/h2&gt;
+&lt;p&gt;What is LATEX? In short, it is a TEX-based publishing system. The computer layout system TEX (pronounced “tech”) was created by the prominent American mathematician and programmer Donald Knuth in the late 70s of the XX century; publishing systems based on it are still widely used and are not going to give up their positions. Here is a short list of TEX&amp;rsquo;s advantages:&lt;/p&gt;
+&lt;p&gt;No other publishing system currently in existence can match TEX in the printing quality of texts with mathematical formulas.
+The TEX system has been implemented on all modern computer platforms, and all of these implementations do indeed work in the same way.
+Thanks to this, TEX has become an international language for the exchange of mathematical and physical articles: having typed his article in TEX, a mathematician can send it by e-mail to his colleague, even if the sender is running Windows and the recipient is running UNIX or, say, on Macintosh.
+There are extensive &amp;ldquo;preprint archives&amp;rdquo; on the Internet to which anyone can submit (and from which anyone can receive) an article; all these articles are typed again in TEX.&lt;/p&gt;
+&lt;p&gt;Finally, the core TEX implementations for all platforms are free.
+As already noted, TEX is a system created by the American mathematician and programmer Donald E. Knuth for typesetting texts with formulas. By itself, TEX is a specialized programming language (Knuth not only invented the language, but also wrote a translator for it, and in such a way that it works in exactly the same way on a variety of computers), in which publishing systems used in practice are written. More precisely, each TEX-based publishing system is a package of macro definitions (macropackage) of this language. Specifically, LATEX (pronounced &amp;ldquo;latex&amp;rdquo; or &amp;ldquo;latex&amp;rdquo;, also spelled &amp;ldquo;LaTeX&amp;rdquo;) is a TEX-based publishing system created by Leslie Lamport.&lt;/p&gt;
+&lt;h2 id=&#34;whats-special-about-latex&#34;&gt;What&amp;rsquo;s special about LaTeX?&lt;/h2&gt;
+&lt;p&gt;This tool is used ubiquitously to create scientific papers, write books, and many other forms of publication. It allows not only to create beautifully designed documents, but also allows users to implement complex typesetting elements such as mathematical expressions, tables, references and bibliographies very quickly, getting consistent markup across all sections.&lt;/p&gt;
+&lt;p&gt;Thanks to the availability of a large number of open libraries (more on that later), the possibilities of LaTeX are almost limitless. These libraries extend the user experience even further, allowing you to add footnotes, draw diagrams, and more.&lt;/p&gt;
+&lt;p&gt;One of the most compelling reasons many people use LaTeX is to separate the content of a document from its style. This means that after writing the content, you can easily change its appearance. Similarly, you can create one document style and use it to standardize the look of others.&lt;/p&gt;
+&lt;p&gt;This allows scientific journals to create templates for submissions. These templates have pre-defined markup, leaving only the content to be added. In fact, there are hundreds of such templates, ranging from various resumes to slide presentations.&lt;/p&gt;
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;LaTeX - convenient and simple&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Немного о системах управления версиями</title>
+      <title>About version control systems</title>
       <link>https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</link>
       <pubDate>Sat, 08 Oct 2022 19:43:24 +0300</pubDate>
       <guid>https://kirilldi.github.io/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</guid>
-      <description>&lt;h1 id=&#34;cистема-управления-версиями-git&#34;&gt;Cистема управления версиями git&lt;/h1&gt;
-&lt;p&gt;Управление версиями — это система, сохраняющая изменения в файле или нескольких файлах, чтобы потом можно было видеть нужные старые версии. Если вы графический или веб-дизайнер и хотите хранить каждую версию изображения или макета — вот это вам наверняка нужно — то пользоваться системой управления версиями будет очень мудрым решением. Она позволяет вернуть файлы к прежнему виду, вернуть к прежнему состоянию весь проект, сравнить изменения с какого-то времени, увидеть, кто последним изменял модуль, который дал сбой, кто создал проблему, и так далее. К примеру, если, пользуясь СУВ, вы всё испортили или потеряли файлы, всё можно легко восстановить. Кроме того, издержки на это будут очень маленькими.&lt;/p&gt;
-&lt;h2 id=&#34;локальные-системы-управления-версиями&#34;&gt;Локальные системы управления версиями&lt;/h2&gt;
-&lt;p&gt;Многие люди, чтобы управлять версиями, просто копируют файлы в другой каталог (умные ещё пишут текущую дату в название каталога). Такой подход очень распространён, потому что прост, но он ещё и чаще даёт сбои. Очень легко забыть, что ты не в том каталоге, и случайно изменить не тот файл, либо скопировать и перезаписать файлы не туда, куда хотел. Чтобы решить эту проблему, программисты уже давно разработали локальные СУВ, с простой базой данных, в которой хранились все изменения нужных файлов.&lt;/p&gt;
+      <description>&lt;h1 id=&#34;git-version-control-system&#34;&gt;git version control system&lt;/h1&gt;
+&lt;p&gt;Versioning is a system that saves changes to a file or files so that you can later see the desired old versions. If you are a graphic or web designer and you want to store every version of an image or layout - which is what you need - then using a version control system will be a very wise decision. It allows you to revert files, revert an entire project, compare changes since a certain time, see who last modified the module that failed, who created the problem, and so on. For example, if, using the SUV, you messed up everything or lost files, everything can be easily restored. In addition, the costs for this will be very small.&lt;/p&gt;
+&lt;h2 id=&#34;local-version-control-systems&#34;&gt;Local version control systems&lt;/h2&gt;
+&lt;p&gt;Many people simply copy files to another directory to manage versions (smart people also write the current date in the name of the directory). This approach is very common because it is simple, but it also fails more often. It&amp;rsquo;s very easy to forget you&amp;rsquo;re in the wrong directory and accidentally change the wrong file, or copy and overwrite files in the wrong place. To solve this problem, programmers have long developed local VCS, with a simple database that stores all changes to the desired files.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -503,7 +500,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.1. Локальные системы управления версиями.&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Fig.1. Local version control systems.&#34; srcset=&#34;
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_e706f61902cc5c73175d5f9c92887d05.webp 400w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_f68fb48e7be85c0944d4c550fb750c16.webp 760w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -512,9 +509,9 @@
                height=&#34;632&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-{ рис.1. Локальные системы управления версиями. }&lt;/p&gt;
-&lt;h2 id=&#34;централизованные-системы-управления-версиями&#34;&gt;Централизованные системы управления версиями&lt;/h2&gt;
-&lt;p&gt;Следующей большой проблемой оказалась необходимость сотрудничать с разработчиками за другими компьютерами. Чтобы решить её, были созданы централизованные системы управления версиями (ЦСУВ). В таких системах, например CVS, Subversion и Perforce, есть центральный сервер, на котором хранятся все отслеживаемые файлы, и ряд клиентов, которые получают копии файлов из него. Много лет это был стандарт управления версиями.&lt;/p&gt;
+{ Fig.1. Local version control systems. }&lt;/p&gt;
+&lt;h2 id=&#34;centralized-version-control-systems&#34;&gt;Centralized version control systems&lt;/h2&gt;
+&lt;p&gt;The next big problem was the need to collaborate with developers on other computers. To solve it, centralized version control systems (CSVs) were created. Such systems, such as CVS, Subversion, and Perforce, have a central server that stores all tracked files, and a number of clients that receive copies of the files from it. For many years this has been the version control standard.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -533,7 +530,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.2. Схема централизованного управления версиями.&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;fig.2. Centralized version control scheme.&#34; srcset=&#34;
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_69de489f391c4e509a84d99d38d572c5.webp 400w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_ed96aa46cd4b4ddff8f7e0b8a017515d.webp 760w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -542,10 +539,10 @@
                height=&#34;594&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-{ рис.2. Схема централизованного управления версиями. }&lt;/p&gt;
-&lt;p&gt;Такой подход имеет множество преимуществ, особенно над локальными СУВ. К примеру, все знают, кто и чем занимается в проекте. У администраторов есть чёткий контроль над тем, кто и что может делать, и, конечно, администрировать ЦСУВ гораздо легче, чем локальные базы на каждом клиенте. Однако при таком подходе есть и несколько серьёзных недостатков. Наиболее очевидный — централизованный сервер является уязвимым местом всей системы. Если сервер выключается на час, то в течение часа разработчики не могут взаимодействовать, и никто не может сохранить новые версии. Если же повреждается диск с центральной базой данных и нет резервной копии, вы теряете абсолютно всё — всю историю проекта, разве что за исключением нескольких рабочих версий, сохранившихся на рабочих машинах пользователей. Локальные системы управления версиями подвержены той же проблеме: если вся история проекта хранится в одном месте, вы рискуете потерять всё.&lt;/p&gt;
-&lt;h2 id=&#34;распределённые-системы-контроля-версий&#34;&gt;Распределённые системы контроля версий&lt;/h2&gt;
-&lt;p&gt;В такой ситуации в игру вступают распределенные системы управления версиями (РСУВ). В таких системах как Git, Mercurial, Bazaar или Darcs, клиенты не просто забирают последние версии файлов, а полностью копируют репозиторий. Поэтому в случае, когда “умирает” сервер, через который шла работа, любой клиентский репозиторий может быть скопирован обратно на сервер, чтобы восстановить базу данных. Каждый раз, когда клиент забирает свежую версию файлов, создаётся полная копия всех данных.&lt;/p&gt;
+{ Fig.2. Centralized version control scheme. }&lt;/p&gt;
+&lt;p&gt;This approach has many advantages, especially over local VMS. For example, everyone knows who does what in the project. Administrators have clear control over who can do what and, of course, administering the CCMS is much easier than local databases on each client. However, there are several serious drawbacks to this approach. The most obvious one is that the centralized server is the weak point of the entire system. If the server goes down for an hour, then for an hour developers cannot interact and no one can save new versions. If the disk with the central database is damaged and there is no backup, you lose absolutely everything - the entire history of the project, except perhaps for a few working versions that have been saved on users&amp;rsquo; working machines. Local version control systems suffer from the same problem: if the entire history of a project is stored in one place, you risk losing everything.&lt;/p&gt;
+&lt;h2 id=&#34;distributed-version-control-systems&#34;&gt;Distributed version control systems&lt;/h2&gt;
+&lt;p&gt;This is where Distributed Version Control Systems (DVCS) come into play. In systems like Git, Mercurial, Bazaar, or Darcs, clients don&amp;rsquo;t just pull the latest versions of files, they copy the entire repository. Therefore, in the event that the server through which the work was going “dies”, any client repository can be copied back to the server in order to restore the database. Each time a client checks out a fresh version of the files, a complete copy of all data is created.&lt;/p&gt;
 &lt;p&gt;
 
 
@@ -564,7 +561,7 @@
 
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.3.  Схема распределенной системы управления версиями.&#34; srcset=&#34;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;fig.3. Diagram of a distributed version control system.&#34; srcset=&#34;
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_5dc86715c805bfafcdfff03618895d43.webp 400w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_12e2121bc55397c4c4bc68f5c63f0021.webp 760w,
                /post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
@@ -573,7 +570,7 @@
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-{ рис.3.  Схема распределенной системы управления версиями.}&lt;/p&gt;
+{ Fig.3. Diagram of a distributed version control system.}&lt;/p&gt;
 </description>
     </item>
     

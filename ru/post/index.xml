@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | K.V. Didus academic web-blog</title>
+    <link>https://kirilldi.github.io/ru/post/</link>
+      <atom:link href="https://kirilldi.github.io/ru/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>ru</language><lastBuildDate>Tue, 01 Nov 2022 17:03:35 +0300</lastBuildDate>
+    <image>
+      <url>https://kirilldi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Posts</title>
+      <link>https://kirilldi.github.io/ru/post/</link>
+    </image>
+    
+    <item>
+      <title>Рецепт по приготовлению научной презентации с markdown и beamer</title>
+      <link>https://kirilldi.github.io/ru/post/sci_presentation/</link>
+      <pubDate>Tue, 01 Nov 2022 17:03:35 +0300</pubDate>
+      <guid>https://kirilldi.github.io/ru/post/sci_presentation/</guid>
+      <description>&lt;p&gt;В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.&lt;/p&gt;
+&lt;h2 id=&#34;актуальность&#34;&gt;Актуальность&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Важно донести результаты своих исследований до окружающих&lt;/li&gt;
+&lt;li&gt;Научная презентация &amp;mdash; рабочий инструмент исследователя&lt;/li&gt;
+&lt;li&gt;Необходимо создавать презентацию быстро&lt;/li&gt;
+&lt;li&gt;Желательна минимизация усилий для создания презентации&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;объект-и-предмет-исследования&#34;&gt;Объект и предмет исследования&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Презентация как текст&lt;/li&gt;
+&lt;li&gt;Программное обеспечение для создания презентаций&lt;/li&gt;
+&lt;li&gt;Входные и выходные форматы презентаций&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;цели-и-задачи&#34;&gt;Цели и задачи&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Создать шаблон презентации в Markdown&lt;/li&gt;
+&lt;li&gt;Описать алгоритм создания выходных форматов презентаций&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;материалы-и-методы&#34;&gt;Материалы и методы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Процессор &lt;code&gt;pandoc&lt;/code&gt; для входного формата Markdown&lt;/li&gt;
+&lt;li&gt;Результирующие форматы
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pdf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;html&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Автоматизация процесса создания: &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;создание-презентации&#34;&gt;Создание презентации&lt;/h1&gt;
+&lt;h2 id=&#34;процессор-pandoc&#34;&gt;Процессор &lt;code&gt;pandoc&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Pandoc: преобразователь текстовых файлов&lt;/li&gt;
+&lt;li&gt;Сайт: &lt;a href=&#34;https://pandoc.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://pandoc.org/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Репозиторий: &lt;a href=&#34;https://github.com/jgm/pandoc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://github.com/jgm/pandoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;формат-pdf&#34;&gt;Формат &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Использование LaTeX&lt;/li&gt;
+&lt;li&gt;Пакет для презентации: &lt;a href=&#34;https://ctan.org/pkg/beamer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;beamer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Тема оформления: &lt;code&gt;metropolis&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;код-для-формата-pdf&#34;&gt;Код для формата &lt;code&gt;pdf&lt;/code&gt;&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;slide_level&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;aspectratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;169&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;section-titles&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;metropolis&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;формат-html&#34;&gt;Формат &lt;code&gt;html&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Используется фреймворк &lt;a href=&#34;https://revealjs.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;reveal.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Используется &lt;a href=&#34;https://revealjs.com/themes/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;тема&lt;/a&gt; &lt;code&gt;beige&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;код-для-формата-html&#34;&gt;Код для формата &lt;code&gt;html&lt;/code&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Тема задаётся в файле &lt;code&gt;Makefile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-make&#34; data-lang=&#34;make&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;REVEALJS_THEME&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; beige 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;результаты&#34;&gt;Результаты&lt;/h1&gt;
+&lt;h2 id=&#34;получающиеся-форматы&#34;&gt;Получающиеся форматы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Полученный &lt;code&gt;pdf&lt;/code&gt;-файл можно демонстрировать в любой программе просмотра &lt;code&gt;pdf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Полученный &lt;code&gt;html&lt;/code&gt;-файл содержит в себе все ресурсы: изображения, css, скрипты&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;элементы-презентации&#34;&gt;Элементы презентации&lt;/h1&gt;
+&lt;h2 id=&#34;актуальность-1&#34;&gt;Актуальность&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Даёт понять, о чём пойдёт речь&lt;/li&gt;
+&lt;li&gt;Следует широко и кратко описать проблему&lt;/li&gt;
+&lt;li&gt;Мотивировать свое исследование&lt;/li&gt;
+&lt;li&gt;Сформулировать цели и задачи&lt;/li&gt;
+&lt;li&gt;Возможна формулировка ожидаемых результатов&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;цели-и-задачи-1&#34;&gt;Цели и задачи&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Не формулируйте более 1&amp;ndash;2 целей исследования&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;материалы-и-методы-1&#34;&gt;Материалы и методы&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Представляйте данные качественно&lt;/li&gt;
+&lt;li&gt;Количественно, только если крайне необходимо&lt;/li&gt;
+&lt;li&gt;Излишние детали не нужны&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;содержание-исследования&#34;&gt;Содержание исследования&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Предлагаемое решение задач исследования с обоснованием&lt;/li&gt;
+&lt;li&gt;Основные этапы работы&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;результаты-1&#34;&gt;Результаты&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Не нужны все результаты&lt;/li&gt;
+&lt;li&gt;Необходимы логические связки между слайдами&lt;/li&gt;
+&lt;li&gt;Необходимо показать понимание материала&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;итоговый-слайд&#34;&gt;Итоговый слайд&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Запоминается последняя фраза. © Штирлиц&lt;/li&gt;
+&lt;li&gt;Главное сообщение, которое вы хотите донести до слушателей&lt;/li&gt;
+&lt;li&gt;Избегайте использовать последний слайд вида &lt;em&gt;Спасибо за внимание&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;рекомендации&#34;&gt;Рекомендации&lt;/h1&gt;
+&lt;h2 id=&#34;принцип-102030&#34;&gt;Принцип 10/20/30&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;10 слайдов&lt;/li&gt;
+&lt;li&gt;20 минут на доклад&lt;/li&gt;
+&lt;li&gt;30 кегль шрифта&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;связь-слайдов&#34;&gt;Связь слайдов&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Один слайд &amp;mdash; одна мысль&lt;/li&gt;
+&lt;li&gt;Нельзя ссылаться на объекты, находящиеся на предыдущих слайдах (например, на формулы)&lt;/li&gt;
+&lt;li&gt;Каждый слайд должен иметь заголовок&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;количество-сущностей&#34;&gt;Количество сущностей&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Человек может одновременно помнить $7 \pm 2$ элемента&lt;/li&gt;
+&lt;li&gt;При размещении информации на слайде старайтесь чтобы в сумме слайд содержал не более 5 элементов&lt;/li&gt;
+&lt;li&gt;Можно группировать элементы так, чтобы визуально было не более 5 групп&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;общие-рекомендации&#34;&gt;Общие рекомендации&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;На слайд выносится та информация, которая без зрительной опоры воспринимается хуже&lt;/li&gt;
+&lt;li&gt;Слайды должны дополнять или обобщать содержание выступления или его частей, а не дублировать его&lt;/li&gt;
+&lt;li&gt;Информация на слайдах должна быть изложена кратко, чётко и хорошо структурирована&lt;/li&gt;
+&lt;li&gt;Слайд не должен быть перегружен графическими изображениями и текстом&lt;/li&gt;
+&lt;li&gt;Не злоупотребляйте анимацией и переходами&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;представление-данных&#34;&gt;Представление данных&lt;/h2&gt;
+&lt;p&gt;::: incremental&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Лучше представить в виде схемы&lt;/li&gt;
+&lt;li&gt;Менее оптимально представить в виде рисунка, графика, таблицы&lt;/li&gt;
+&lt;li&gt;Текст используется, если все предыдущие способы отображения информации не подошли&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Вот как я улучшал сайт на прошлой неделе (3 этап)</title>
+      <link>https://kirilldi.github.io/ru/post/week3/</link>
+      <pubDate>Sun, 30 Oct 2022 18:49:46 +0300</pubDate>
+      <guid>https://kirilldi.github.io/ru/post/week3/</guid>
+      <description>&lt;h1 id=&#34;цель-работы&#34;&gt;Цель работы&lt;/h1&gt;
+&lt;p&gt;Создания контента для персонализации шаблона сайта для научной коммуникации.&lt;/p&gt;
+&lt;h1 id=&#34;задание&#34;&gt;Задание&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Добавить к сайту достижения.&lt;/li&gt;
+&lt;li&gt;Создать пост по прошлой неделе.&lt;/li&gt;
+&lt;li&gt;Создать пост о легковесных языках разметки&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;теоретическое-введение&#34;&gt;Теоретическое введение&lt;/h1&gt;
+&lt;p&gt;Личный блог является важным инструментов в научной коммуникации. Он позволяет получить доступ к научным работам, связаться с автором и получить общее впечатление о нем.&lt;/p&gt;
+&lt;p&gt;Для создания блога воспользуемся следующими инструментами:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;github&lt;/li&gt;
+&lt;li&gt;github pages в качестве хостинга&lt;/li&gt;
+&lt;li&gt;hugo (программа с шаблонами для быстрого создания сайтов)&lt;/li&gt;
+&lt;li&gt;Wowchemy (подборка  тем для hugo)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;выполнение-лабораторной-работы&#34;&gt;Выполнение лабораторной работы&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Найдем папку /content/home/ и внесем необходимые изменения в файлы соответствующие нужному блоку шаблона. Нас интересует раздел skills, activities and experience (рис. [-@fig:001]).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Содержимое content/home&#34; srcset=&#34;
+               /ru/post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_ea3f5bc393073ae26789eb8713351a7f.webp 400w,
+               /ru/post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_cee1f47c95986264f6d01ac843cc5cfb.webp 760w,
+               /ru/post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week3/image/1_hue6690384f196cad69ddae253854af8ae_185821_ea3f5bc393073ae26789eb8713351a7f.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;372&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает! (рис. [-@fig:002]).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Изменения на сайте&#34; srcset=&#34;
+               /ru/post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_87ae16612dfdc4ce1b17d50cff7f02f3.webp 400w,
+               /ru/post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_0cca85ecee788c569053e8d1c07bee13.webp 760w,
+               /ru/post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week3/image/2_hub124c2dd72c04cf6c20f3701008bc9ff_74677_87ae16612dfdc4ce1b17d50cff7f02f3.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;269&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Создадим новый пост командой hugo new -kind post post/your-post-name. Он добавится в папку content/post.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает! (рис. [-@fig:003]).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+               /ru/post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_b9945da0af01c4e6364418303949c1ac.webp 400w,
+               /ru/post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_7c53620b6f0083569e4d58ad6049705a.webp 760w,
+               /ru/post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week3/image/3_hu67a78c1376ee7b19b6136016e7ffb615_423347_b9945da0af01c4e6364418303949c1ac.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;420&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;выводы&#34;&gt;Выводы&lt;/h1&gt;
+&lt;p&gt;В результате работы мы имеем персонализированный шаблон сайта на github pages. В дальнейшем мы будем его редактировать.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Вот как я улучшал сайт на прошлой неделе (этап 2)</title>
+      <link>https://kirilldi.github.io/ru/post/week2/</link>
+      <pubDate>Sat, 22 Oct 2022 19:59:35 +0300</pubDate>
+      <guid>https://kirilldi.github.io/ru/post/week2/</guid>
+      <description>&lt;h1 id=&#34;цель-работы&#34;&gt;Цель работы&lt;/h1&gt;
+&lt;p&gt;Создания контента для персонализации шаблона сайта для научной коммуникации.&lt;/p&gt;
+&lt;h1 id=&#34;задание&#34;&gt;Задание&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Обновить личные данные&lt;/li&gt;
+&lt;li&gt;Создать первый пост&lt;/li&gt;
+&lt;li&gt;Создать пост о системе управления версиями&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;теоретическое-введение&#34;&gt;Теоретическое введение&lt;/h1&gt;
+&lt;p&gt;Личный блог является важным инструментов в научной коммуникации. Он позволяет получить доступ к научным работам, связаться с автором и получить общее впечатление о нем.&lt;/p&gt;
+&lt;p&gt;Для создания блога воспользуемся следующими инструментами:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;github&lt;/li&gt;
+&lt;li&gt;github pages в качестве хостинга&lt;/li&gt;
+&lt;li&gt;hugo (программа с шаблонами для быстрого создания сайтов)&lt;/li&gt;
+&lt;li&gt;Wowchemy (подборка  тем для hugo)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;выполнение-лабораторной-работы&#34;&gt;Выполнение лабораторной работы&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Найдем папку /content/authors/admin и внесем необходимые изменения в файл &lt;em&gt;index.md&lt;/em&gt;. Он представляет собой шаблон визитной карточки сайта.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Содержание шаблона визитной карточки сайта&#34; srcset=&#34;
+               /ru/post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_d0e42c4a6e40ac11a10b7c08ffdf7929.webp 400w,
+               /ru/post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_fa6bd9c95bf7a874d622077e35a847ef.webp 760w,
+               /ru/post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week2/image/1_hub08a8f549efb904024b324fd70c623d1_314017_d0e42c4a6e40ac11a10b7c08ffdf7929.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;492&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Добавим изображение в папку admin и назовем его avatar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;avatar&#34; srcset=&#34;
+               /ru/post/week2/image/2_huea13ddc39d9a87bb3e94ef4029b76f39_41536_062d7fa959a92a2d8906eb52cab0eeba.webp 400w,
+               /ru/post/week2/image/2_huea13ddc39d9a87bb3e94ef4029b76f39_41536_4b633459a9966d7e15bcfbdc6cde25d1.webp 760w,
+               /ru/post/week2/image/2_huea13ddc39d9a87bb3e94ef4029b76f39_41536_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week2/image/2_huea13ddc39d9a87bb3e94ef4029b76f39_41536_062d7fa959a92a2d8906eb52cab0eeba.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;229&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает!.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+               /ru/post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_080b0d0e6ed01f532ad53caa092b408b.webp 400w,
+               /ru/post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_32666fe7bada2d8beccf9b3b7001c3a5.webp 760w,
+               /ru/post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week2/image/3_hu6e874c167a2dc9265a092d9bd3159fd0_482352_080b0d0e6ed01f532ad53caa092b408b.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;359&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Создадим новый пост командой hugo new &amp;ndash;kind post post/your-post-name. Он добавится в папку content/post.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Выполним коммит изменений в соотвествующие репозитории и запустим сайт командой hugo. Затем проверим работоспособность сайта. Все работает!.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;изменения на сайте&#34; srcset=&#34;
+               /ru/post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_bc46652b9b36303f463c4c264287738e.webp 400w,
+               /ru/post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_0c98d02638b67432d468903b1fb47843.webp 760w,
+               /ru/post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/week2/image/4_hu6e874c167a2dc9265a092d9bd3159fd0_353887_bc46652b9b36303f463c4c264287738e.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;359&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;выводы&#34;&gt;Выводы&lt;/h1&gt;
+&lt;p&gt;В результате работы мы имеем персонализированный шаблон сайта на github pages. В дальнейшем мы будем его редактировать.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mathematicians are like superheroes - they need latex too.</title>
+      <link>https://kirilldi.github.io/ru/post/latex/</link>
+      <pubDate>Sat, 22 Oct 2022 19:59:05 +0300</pubDate>
+      <guid>https://kirilldi.github.io/ru/post/latex/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In this article, we will cover the following topics:&lt;/p&gt;
+&lt;p&gt;What are markup languages ​​and why are they needed?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is Latex?&lt;/li&gt;
+&lt;li&gt;What is special about LaTeX?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-are-markup-languages-and-why-are-they-needed&#34;&gt;What are markup languages ​​and why are they needed?&lt;/h2&gt;
+&lt;p&gt;A markup language (text) in computer terminology is a set of characters or sequences of characters inserted into text to convey information about its display or structure. It belongs to the class of computer languages. A text document written using a markup language contains not only the text itself (as a sequence of words and punctuation marks), but also additional information about its various sections - for example, an indication of headings, highlights, lists, etc. In more complex cases A markup language allows you to insert interactive elements and content from other documents into a document.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-latex&#34;&gt;What is LaTeX?&lt;/h2&gt;
+&lt;p&gt;What is LATEX? In short, it is a TEX-based publishing system. The computer layout system TEX (pronounced “tech”) was created by the prominent American mathematician and programmer Donald Knuth in the late 70s of the XX century; publishing systems based on it are still widely used and are not going to give up their positions. Here is a short list of TEX&amp;rsquo;s advantages:&lt;/p&gt;
+&lt;p&gt;No other publishing system currently in existence can match TEX in the printing quality of texts with mathematical formulas.
+The TEX system has been implemented on all modern computer platforms, and all of these implementations do indeed work in the same way.
+Thanks to this, TEX has become an international language for the exchange of mathematical and physical articles: having typed his article in TEX, a mathematician can send it by e-mail to his colleague, even if the sender is running Windows and the recipient is running UNIX or, say, on Macintosh.
+There are extensive &amp;ldquo;preprint archives&amp;rdquo; on the Internet to which anyone can submit (and from which anyone can receive) an article; all these articles are typed again in TEX.&lt;/p&gt;
+&lt;p&gt;Finally, the core TEX implementations for all platforms are free.
+As already noted, TEX is a system created by the American mathematician and programmer Donald E. Knuth for typesetting texts with formulas. By itself, TEX is a specialized programming language (Knuth not only invented the language, but also wrote a translator for it, and in such a way that it works in exactly the same way on a variety of computers), in which publishing systems used in practice are written. More precisely, each TEX-based publishing system is a package of macro definitions (macropackage) of this language. Specifically, LATEX (pronounced &amp;ldquo;latex&amp;rdquo; or &amp;ldquo;latex&amp;rdquo;, also spelled &amp;ldquo;LaTeX&amp;rdquo;) is a TEX-based publishing system created by Leslie Lamport.&lt;/p&gt;
+&lt;h2 id=&#34;whats-special-about-latex&#34;&gt;What&amp;rsquo;s special about LaTeX?&lt;/h2&gt;
+&lt;p&gt;This tool is used ubiquitously to create scientific papers, write books, and many other forms of publication. It allows not only to create beautifully designed documents, but also allows users to implement complex typesetting elements such as mathematical expressions, tables, references and bibliographies very quickly, getting consistent markup across all sections.&lt;/p&gt;
+&lt;p&gt;Thanks to the availability of a large number of open libraries (more on that later), the possibilities of LaTeX are almost limitless. These libraries extend the user experience even further, allowing you to add footnotes, draw diagrams, and more.&lt;/p&gt;
+&lt;p&gt;One of the most compelling reasons many people use LaTeX is to separate the content of a document from its style. This means that after writing the content, you can easily change its appearance. Similarly, you can create one document style and use it to standardize the look of others.&lt;/p&gt;
+&lt;p&gt;This allows scientific journals to create templates for submissions. These templates have pre-defined markup, leaving only the content to be added. In fact, there are hundreds of such templates, ranging from various resumes to slide presentations.&lt;/p&gt;
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;LaTeX - convenient and simple&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Немного о системах управления версиями</title>
+      <link>https://kirilldi.github.io/ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</link>
+      <pubDate>Sat, 08 Oct 2022 19:43:24 +0300</pubDate>
+      <guid>https://kirilldi.github.io/ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/</guid>
+      <description>&lt;h1 id=&#34;cистема-управления-версиями-git&#34;&gt;Cистема управления версиями git&lt;/h1&gt;
+&lt;p&gt;Управление версиями — это система, сохраняющая изменения в файле или нескольких файлах, чтобы потом можно было видеть нужные старые версии. Если вы графический или веб-дизайнер и хотите хранить каждую версию изображения или макета — вот это вам наверняка нужно — то пользоваться системой управления версиями будет очень мудрым решением. Она позволяет вернуть файлы к прежнему виду, вернуть к прежнему состоянию весь проект, сравнить изменения с какого-то времени, увидеть, кто последним изменял модуль, который дал сбой, кто создал проблему, и так далее. К примеру, если, пользуясь СУВ, вы всё испортили или потеряли файлы, всё можно легко восстановить. Кроме того, издержки на это будут очень маленькими.&lt;/p&gt;
+&lt;h2 id=&#34;локальные-системы-управления-версиями&#34;&gt;Локальные системы управления версиями&lt;/h2&gt;
+&lt;p&gt;Многие люди, чтобы управлять версиями, просто копируют файлы в другой каталог (умные ещё пишут текущую дату в название каталога). Такой подход очень распространён, потому что прост, но он ещё и чаще даёт сбои. Очень легко забыть, что ты не в том каталоге, и случайно изменить не тот файл, либо скопировать и перезаписать файлы не туда, куда хотел. Чтобы решить эту проблему, программисты уже давно разработали локальные СУВ, с простой базой данных, в которой хранились все изменения нужных файлов.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.1. Локальные системы управления версиями.&#34; srcset=&#34;
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_e706f61902cc5c73175d5f9c92887d05.webp 400w,
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_f68fb48e7be85c0944d4c550fb750c16.webp 760w,
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/1_hude9548a2bdc0e548f6a073af36f046ed_113957_e706f61902cc5c73175d5f9c92887d05.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;632&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{ рис.1. Локальные системы управления версиями. }&lt;/p&gt;
+&lt;h2 id=&#34;централизованные-системы-управления-версиями&#34;&gt;Централизованные системы управления версиями&lt;/h2&gt;
+&lt;p&gt;Следующей большой проблемой оказалась необходимость сотрудничать с разработчиками за другими компьютерами. Чтобы решить её, были созданы централизованные системы управления версиями (ЦСУВ). В таких системах, например CVS, Subversion и Perforce, есть центральный сервер, на котором хранятся все отслеживаемые файлы, и ряд клиентов, которые получают копии файлов из него. Много лет это был стандарт управления версиями.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.2. Схема централизованного управления версиями.&#34; srcset=&#34;
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_69de489f391c4e509a84d99d38d572c5.webp 400w,
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_ed96aa46cd4b4ddff8f7e0b8a017515d.webp 760w,
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/2_hu895bac68446ec682e2c249335eaa896b_237195_69de489f391c4e509a84d99d38d572c5.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;594&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{ рис.2. Схема централизованного управления версиями. }&lt;/p&gt;
+&lt;p&gt;Такой подход имеет множество преимуществ, особенно над локальными СУВ. К примеру, все знают, кто и чем занимается в проекте. У администраторов есть чёткий контроль над тем, кто и что может делать, и, конечно, администрировать ЦСУВ гораздо легче, чем локальные базы на каждом клиенте. Однако при таком подходе есть и несколько серьёзных недостатков. Наиболее очевидный — централизованный сервер является уязвимым местом всей системы. Если сервер выключается на час, то в течение часа разработчики не могут взаимодействовать, и никто не может сохранить новые версии. Если же повреждается диск с центральной базой данных и нет резервной копии, вы теряете абсолютно всё — всю историю проекта, разве что за исключением нескольких рабочих версий, сохранившихся на рабочих машинах пользователей. Локальные системы управления версиями подвержены той же проблеме: если вся история проекта хранится в одном месте, вы рискуете потерять всё.&lt;/p&gt;
+&lt;h2 id=&#34;распределённые-системы-контроля-версий&#34;&gt;Распределённые системы контроля версий&lt;/h2&gt;
+&lt;p&gt;В такой ситуации в игру вступают распределенные системы управления версиями (РСУВ). В таких системах как Git, Mercurial, Bazaar или Darcs, клиенты не просто забирают последние версии файлов, а полностью копируют репозиторий. Поэтому в случае, когда “умирает” сервер, через который шла работа, любой клиентский репозиторий может быть скопирован обратно на сервер, чтобы восстановить базу данных. Каждый раз, когда клиент забирает свежую версию файлов, создаётся полная копия всех данных.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;рис.3.  Схема распределенной системы управления версиями.&#34; srcset=&#34;
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_5dc86715c805bfafcdfff03618895d43.webp 400w,
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_12e2121bc55397c4c4bc68f5c63f0021.webp 760w,
+               /ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://kirilldi.github.io/ru/post/%D0%BD%D0%B5%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE/image/3_hu92afdd37cec1009294ba2c15f337fbb1_224039_5dc86715c805bfafcdfff03618895d43.webp&#34;
+               width=&#34;702&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+{ рис.3.  Схема распределенной системы управления версиями.}&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Мой первый пост!</title>
+      <link>https://kirilldi.github.io/ru/post/post-1/</link>
+      <pubDate>Sat, 08 Oct 2022 19:27:59 +0300</pubDate>
+      <guid>https://kirilldi.github.io/ru/post/post-1/</guid>
+      <description>&lt;h1 id=&#34;это-мой-первый-пост&#34;&gt;Это мой первый пост&lt;/h1&gt;
+&lt;p&gt;Если вы читаете это сообщение, значит у меня получилось создать пост с помощью генератора сайтов Hugo и академичесокого шаблона Wowchemy&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

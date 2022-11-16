@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: November 5, 2022 --><html lang="en-us" >
+<!-- Last Published: November 16, 2022 --><html lang="en-us" >
 
 
 <head>
@@ -272,10 +272,12 @@
 
   
 
-<meta name="description" content="В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.
-Актуальность Важно донести результаты своих исследований до окружающих Научная презентация &mdash; рабочий инструмент исследователя Необходимо создавать презентацию быстро Желательна минимизация усилий для создания презентации Объект и предмет исследования Презентация как текст Программное обеспечение для создания презентаций Входные и выходные форматы презентаций Цели и задачи Создать шаблон презентации в Markdown Описать алгоритм создания выходных форматов презентаций Материалы и методы Процессор pandoc для входного формата Markdown Результирующие форматы pdf html Автоматизация процесса создания: Makefile Создание презентации Процессор pandoc Pandoc: преобразователь текстовых файлов Сайт: https://pandoc." />
+<meta name="description" content="In this article, we will look at the structure and useful constructs for designing a scientific presentation in Markdown.
+Relevance It is important to communicate the results of your research to others Scientific presentation &mdash; researcher&rsquo;s working tool Need to create a presentation quickly It is desirable to minimize the effort to create a presentation Object and subject of research Presentation as text Software for creating presentations Input and output presentation formats Targets and goals Create presentation template in Markdown Describe the algorithm for creating output presentation formats Materials and methods pandoc processor for Markdown input format Resulting formats pdf html Automation of the creation process: Makefile Create a presentation Processor pandoc Pandoc: text file converter Website: https://pandoc." />
 
 
+
+  <link rel="alternate" hreflang="ru" href="https://kirilldi.github.io/ru/post/sci_presentation/" />
 
 <link rel="alternate" hreflang="en-us" href="https://kirilldi.github.io/post/sci_presentation/" />
 <link rel="canonical" href="https://kirilldi.github.io/post/sci_presentation/" />
@@ -313,11 +315,11 @@
   <meta property="twitter:site" content="@wowchemy" />
   <meta property="twitter:creator" content="@wowchemy" />
 <meta property="twitter:image" content="https://kirilldi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
-<meta property="og:site_name" content="Academic" />
+<meta property="og:site_name" content="K.V. Didus academic web-blog" />
 <meta property="og:url" content="https://kirilldi.github.io/post/sci_presentation/" />
-<meta property="og:title" content="Рецепт по приготовлению научной презентации с markdown и beamer | Academic" />
-<meta property="og:description" content="В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.
-Актуальность Важно донести результаты своих исследований до окружающих Научная презентация &mdash; рабочий инструмент исследователя Необходимо создавать презентацию быстро Желательна минимизация усилий для создания презентации Объект и предмет исследования Презентация как текст Программное обеспечение для создания презентаций Входные и выходные форматы презентаций Цели и задачи Создать шаблон презентации в Markdown Описать алгоритм создания выходных форматов презентаций Материалы и методы Процессор pandoc для входного формата Markdown Результирующие форматы pdf html Автоматизация процесса создания: Makefile Создание презентации Процессор pandoc Pandoc: преобразователь текстовых файлов Сайт: https://pandoc." /><meta property="og:image" content="https://kirilldi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+<meta property="og:title" content="How to make scientific presentations with markdown and beamer | K.V. Didus academic web-blog" />
+<meta property="og:description" content="In this article, we will look at the structure and useful constructs for designing a scientific presentation in Markdown.
+Relevance It is important to communicate the results of your research to others Scientific presentation &mdash; researcher&rsquo;s working tool Need to create a presentation quickly It is desirable to minimize the effort to create a presentation Object and subject of research Presentation as text Software for creating presentations Input and output presentation formats Targets and goals Create presentation template in Markdown Describe the algorithm for creating output presentation formats Materials and methods pandoc processor for Markdown input format Resulting formats pdf html Automation of the creation process: Makefile Create a presentation Processor pandoc Pandoc: text file converter Website: https://pandoc." /><meta property="og:image" content="https://kirilldi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -354,7 +356,7 @@
     "@type": "WebPage",
     "@id": "https://kirilldi.github.io/post/sci_presentation/"
   },
-  "headline": "Рецепт по приготовлению научной презентации с markdown и beamer",
+  "headline": "How to make scientific presentations with markdown and beamer",
   
   "datePublished": "2022-11-01T17:03:35+03:00",
   "dateModified": "2022-11-01T17:03:35+03:00",
@@ -366,13 +368,13 @@
   
   "publisher": {
     "@type": "Organization",
-    "name": "Academic",
+    "name": "K.V. Didus academic web-blog",
     "logo": {
       "@type": "ImageObject",
       "url": "https://kirilldi.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.\nАктуальность Важно донести результаты своих исследований до окружающих Научная презентация \u0026mdash; рабочий инструмент исследователя Необходимо создавать презентацию быстро Желательна минимизация усилий для создания презентации Объект и предмет исследования Презентация как текст Программное обеспечение для создания презентаций Входные и выходные форматы презентаций Цели и задачи Создать шаблон презентации в Markdown Описать алгоритм создания выходных форматов презентаций Материалы и методы Процессор pandoc для входного формата Markdown Результирующие форматы pdf html Автоматизация процесса создания: Makefile Создание презентации Процессор pandoc Pandoc: преобразователь текстовых файлов Сайт: https://pandoc."
+  "description": "In this article, we will look at the structure and useful constructs for designing a scientific presentation in Markdown.\nRelevance It is important to communicate the results of your research to others Scientific presentation \u0026mdash; researcher\u0026rsquo;s working tool Need to create a presentation quickly It is desirable to minimize the effort to create a presentation Object and subject of research Presentation as text Software for creating presentations Input and output presentation formats Targets and goals Create presentation template in Markdown Describe the algorithm for creating output presentation formats Materials and methods pandoc processor for Markdown input format Resulting formats pdf html Automation of the creation process: Makefile Create a presentation Processor pandoc Pandoc: text file converter Website: https://pandoc."
 }
 </script>
 
@@ -394,7 +396,7 @@
 
 
   
-  <title>Рецепт по приготовлению научной презентации с markdown и beamer | Academic</title>
+  <title>How to make scientific presentations with markdown and beamer | K.V. Didus academic web-blog</title>
 
   
   
@@ -489,7 +491,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">K.V. Didus academic web-blog</a>
       </div>
       
 
@@ -502,7 +504,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Academic</a>
+        <a class="navbar-brand" href="/">K.V. Didus academic web-blog</a>
       </div>
       
 
@@ -780,6 +782,22 @@
 
         
         
+        <li class="nav-item dropdown i18n-dropdown">
+          <a href="#" class="nav-link " data-toggle="dropdown"
+             aria-haspopup="true" aria-label="Languages">
+            <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item dropdown-item-active">
+              <span>English</span>
+            </div>
+            
+            <a class="dropdown-item" href="https://kirilldi.github.io/ru/post/sci_presentation/">
+              <span>Русский</span>
+            </a>
+            
+          </div>
+        </li>
+        
 
       </ul>
 
@@ -817,7 +835,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Рецепт по приготовлению научной презентации с markdown и beamer</h1>
+  <h1>How to make scientific presentations with markdown and beamer</h1>
 
   
 
@@ -845,7 +863,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    3 min read
   </span>
   
 
@@ -873,145 +891,142 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>В этой статье рассмотрим структуру и полезные конструкции для оформления научной презентации в Markdown.</p>
-<h2 id="актуальность">Актуальность</h2>
+      <p>In this article, we will look at the structure and useful constructs for designing a scientific presentation in Markdown.</p>
+<h2 id="relevance">Relevance</h2>
 <ul>
-<li>Важно донести результаты своих исследований до окружающих</li>
-<li>Научная презентация &mdash; рабочий инструмент исследователя</li>
-<li>Необходимо создавать презентацию быстро</li>
-<li>Желательна минимизация усилий для создания презентации</li>
+<li>It is important to communicate the results of your research to others</li>
+<li>Scientific presentation &mdash; researcher&rsquo;s working tool</li>
+<li>Need to create a presentation quickly</li>
+<li>It is desirable to minimize the effort to create a presentation</li>
 </ul>
-<h2 id="объект-и-предмет-исследования">Объект и предмет исследования</h2>
+<h2 id="object-and-subject-of-research">Object and subject of research</h2>
 <ul>
-<li>Презентация как текст</li>
-<li>Программное обеспечение для создания презентаций</li>
-<li>Входные и выходные форматы презентаций</li>
+<li>Presentation as text</li>
+<li>Software for creating presentations</li>
+<li>Input and output presentation formats</li>
 </ul>
-<h2 id="цели-и-задачи">Цели и задачи</h2>
+<h2 id="targets-and-goals">Targets and goals</h2>
 <ul>
-<li>Создать шаблон презентации в Markdown</li>
-<li>Описать алгоритм создания выходных форматов презентаций</li>
+<li>Create presentation template in Markdown</li>
+<li>Describe the algorithm for creating output presentation formats</li>
 </ul>
-<h2 id="материалы-и-методы">Материалы и методы</h2>
+<h2 id="materials-and-methods">Materials and methods</h2>
 <ul>
-<li>Процессор <code>pandoc</code> для входного формата Markdown</li>
-<li>Результирующие форматы
-<ul>
+<li><code>pandoc</code> processor for Markdown input format</li>
+<li>Resulting formats</li>
 <li><code>pdf</code></li>
 <li><code>html</code></li>
+<li>Automation of the creation process: <code>Makefile</code></li>
 </ul>
-</li>
-<li>Автоматизация процесса создания: <code>Makefile</code></li>
-</ul>
-<h1 id="создание-презентации">Создание презентации</h1>
-<h2 id="процессор-pandoc">Процессор <code>pandoc</code></h2>
+<h1 id="create-a-presentation">Create a presentation</h1>
+<h2 id="processor-pandoc">Processor <code>pandoc</code></h2>
 <ul>
-<li>Pandoc: преобразователь текстовых файлов</li>
-<li>Сайт: <a href="https://pandoc.org/" target="_blank" rel="noopener">https://pandoc.org/</a></li>
-<li>Репозиторий: <a href="https://github.com/jgm/pandoc" target="_blank" rel="noopener">https://github.com/jgm/pandoc</a></li>
+<li>Pandoc: text file converter</li>
+<li>Website: <a href="https://pandoc.org/" target="_blank" rel="noopener">https://pandoc.org/</a></li>
+<li>Repository: <a href="https://github.com/jgm/pandoc" target="_blank" rel="noopener">https://github.com/jgm/pandoc</a></li>
 </ul>
-<h2 id="формат-pdf">Формат <code>pdf</code></h2>
+<h2 id="format-pdf">Format <code>pdf</code></h2>
 <ul>
-<li>Использование LaTeX</li>
-<li>Пакет для презентации: <a href="https://ctan.org/pkg/beamer" target="_blank" rel="noopener">beamer</a></li>
-<li>Тема оформления: <code>metropolis</code></li>
+<li>Using LaTeX</li>
+<li>Presentation package: <a href="https://ctan.org/pkg/beamer" target="_blank" rel="noopener">beamer</a></li>
+<li>Theme: <code>metropolis</code></li>
 </ul>
-<h2 id="код-для-формата-pdf">Код для формата <code>pdf</code></h2>
+<h2 id="code-for-pdf-format">Code for <code>pdf</code> format</h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">slide_level</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">aspectratio</span><span class="p">:</span><span class="w"> </span><span class="m">169</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">aspect ratio</span><span class="p">:</span><span class="w"> </span><span class="m">169</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">section-titles</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">metropolis</span><span class="w">
-</span></span></span></code></pre></div><h2 id="формат-html">Формат <code>html</code></h2>
+</span></span></span></code></pre></div><h2 id="html-format"><code>html</code> format</h2>
 <ul>
-<li>Используется фреймворк <a href="https://revealjs.com/" target="_blank" rel="noopener">reveal.js</a></li>
-<li>Используется <a href="https://revealjs.com/themes/" target="_blank" rel="noopener">тема</a> <code>beige</code></li>
+<li>Used framework <a href="https://revealjs.com/" target="_blank" rel="noopener">reveal.js</a></li>
+<li>Used <a href="https://revealjs.com/themes/" target="_blank" rel="noopener">theme</a> <code>beige</code></li>
 </ul>
-<h2 id="код-для-формата-html">Код для формата <code>html</code></h2>
+<h2 id="code-for-html-format">Code for <code>html</code> format</h2>
 <ul>
-<li>Тема задаётся в файле <code>Makefile</code></li>
+<li>The theme is set in the <code>Makefile</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-make" data-lang="make"><span class="line"><span class="cl"><span class="nv">REVEALJS_THEME</span> <span class="o">=</span> beige 
-</span></span></code></pre></div><h1 id="результаты">Результаты</h1>
-<h2 id="получающиеся-форматы">Получающиеся форматы</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-make" data-lang="make"><span class="line"><span class="cl"><span class="nv">REVEALJS_THEME</span> <span class="o">=</span> beige
+</span></span></code></pre></div><h1 id="results">Results</h1>
+<h2 id="resulting-formats">resulting formats</h2>
 <ul>
-<li>Полученный <code>pdf</code>-файл можно демонстрировать в любой программе просмотра <code>pdf</code></li>
-<li>Полученный <code>html</code>-файл содержит в себе все ресурсы: изображения, css, скрипты</li>
+<li>The resulting <code>pdf</code> file can be displayed in any <code>pdf</code> viewer</li>
+<li>The resulting <code>html</code>-file contains all the resources: images, css, scripts</li>
 </ul>
-<h1 id="элементы-презентации">Элементы презентации</h1>
-<h2 id="актуальность-1">Актуальность</h2>
+<h1 id="presentation-elements">Presentation elements</h1>
+<h2 id="relevance-1">Relevance</h2>
 <ul>
-<li>Даёт понять, о чём пойдёт речь</li>
-<li>Следует широко и кратко описать проблему</li>
-<li>Мотивировать свое исследование</li>
-<li>Сформулировать цели и задачи</li>
-<li>Возможна формулировка ожидаемых результатов</li>
+<li>Makes it clear what is going on</li>
+<li>Describe the problem broadly and concisely</li>
+<li>Motivate your research</li>
+<li>Formulate goals and objectives</li>
+<li>Possible formulation of expected results</li>
 </ul>
-<h2 id="цели-и-задачи-1">Цели и задачи</h2>
+<h2 id="targets-and-goals-1">Targets and goals</h2>
 <ul>
-<li>Не формулируйте более 1&ndash;2 целей исследования</li>
+<li>Do not formulate more than 1-2 research objectives</li>
 </ul>
-<h2 id="материалы-и-методы-1">Материалы и методы</h2>
+<h2 id="materials-and-methods-1">Materials and methods</h2>
 <ul>
-<li>Представляйте данные качественно</li>
-<li>Количественно, только если крайне необходимо</li>
-<li>Излишние детали не нужны</li>
+<li>Present data qualitatively</li>
+<li>Quantitatively, only if absolutely necessary</li>
+<li>No extra parts needed</li>
 </ul>
-<h2 id="содержание-исследования">Содержание исследования</h2>
+<h2 id="research-content">Research content</h2>
 <ul>
-<li>Предлагаемое решение задач исследования с обоснованием</li>
-<li>Основные этапы работы</li>
+<li>The proposed solution to the research problems with justification</li>
+<li>Main stages of work</li>
 </ul>
-<h2 id="результаты-1">Результаты</h2>
+<h2 id="results-1">Results</h2>
 <ul>
-<li>Не нужны все результаты</li>
-<li>Необходимы логические связки между слайдами</li>
-<li>Необходимо показать понимание материала</li>
+<li>Do not need all the results</li>
+<li>Requires logical links between slides</li>
+<li>Must show understanding of the material</li>
 </ul>
-<h2 id="итоговый-слайд">Итоговый слайд</h2>
+<h2 id="summary-slide">Summary slide</h2>
 <ul>
-<li>Запоминается последняя фраза. © Штирлиц</li>
-<li>Главное сообщение, которое вы хотите донести до слушателей</li>
-<li>Избегайте использовать последний слайд вида <em>Спасибо за внимание</em></li>
+<li>The last phrase is remembered. © Stirlitz</li>
+<li>The main message you want to convey to your listeners</li>
+<li>Avoid using the last slide like <em>Thank you for your attention</em></li>
 </ul>
-<h1 id="рекомендации">Рекомендации</h1>
-<h2 id="принцип-102030">Принцип 10/20/30</h2>
+<h1 id="recommendations">Recommendations</h1>
+<h2 id="principle-102030">Principle 10/20/30</h2>
 <ul>
-<li>10 слайдов</li>
-<li>20 минут на доклад</li>
-<li>30 кегль шрифта</li>
+<li>10 slides</li>
+<li>20 minutes for presentation</li>
+<li>30 font size</li>
 </ul>
-<h2 id="связь-слайдов">Связь слайдов</h2>
+<h2 id="link-slides">Link slides</h2>
 <p>::: incremental</p>
 <ul>
-<li>Один слайд &mdash; одна мысль</li>
-<li>Нельзя ссылаться на объекты, находящиеся на предыдущих слайдах (например, на формулы)</li>
-<li>Каждый слайд должен иметь заголовок</li>
+<li>One slide &mdash; one thought</li>
+<li>You can not refer to objects that are on previous slides (for example, formulas)</li>
+<li>Each slide must have a title</li>
 </ul>
 <p>:::</p>
-<h2 id="количество-сущностей">Количество сущностей</h2>
+<h2 id="number-of-entities">Number of entities</h2>
 <p>::: incremental</p>
 <ul>
-<li>Человек может одновременно помнить $7 \pm 2$ элемента</li>
-<li>При размещении информации на слайде старайтесь чтобы в сумме слайд содержал не более 5 элементов</li>
-<li>Можно группировать элементы так, чтобы визуально было не более 5 групп</li>
+<li>A person can remember $7 \pm 2$ elements at the same time</li>
+<li>When placing information on a slide, try to make the slide contain no more than 5 elements in total</li>
+<li>You can group elements so that visually there are no more than 5 groups</li>
 </ul>
 <p>:::</p>
-<h2 id="общие-рекомендации">Общие рекомендации</h2>
+<h2 id="general-recommendations">General recommendations</h2>
 <p>::: incremental</p>
 <ul>
-<li>На слайд выносится та информация, которая без зрительной опоры воспринимается хуже</li>
-<li>Слайды должны дополнять или обобщать содержание выступления или его частей, а не дублировать его</li>
-<li>Информация на слайдах должна быть изложена кратко, чётко и хорошо структурирована</li>
-<li>Слайд не должен быть перегружен графическими изображениями и текстом</li>
-<li>Не злоупотребляйте анимацией и переходами</li>
+<li>Information that is perceived worse without visual support is placed on the slide</li>
+<li>Slides should complement or summarize the content of the speech or its parts, and not duplicate it</li>
+<li>Information on slides should be concise, clear and well structured</li>
+<li>The slide should not be overloaded with graphics and text</li>
+<li>Don&rsquo;t overuse animations and transitions</li>
 </ul>
 <p>:::</p>
-<h2 id="представление-данных">Представление данных</h2>
+<h2 id="data-representation">Data representation</h2>
 <p>::: incremental</p>
 <ul>
-<li>Лучше представить в виде схемы</li>
-<li>Менее оптимально представить в виде рисунка, графика, таблицы</li>
-<li>Текст используется, если все предыдущие способы отображения информации не подошли</li>
+<li>It is better to present in the form of a diagram</li>
+<li>Less optimal to present in the form of a picture, graph, table</li>
+<li>Text is used if all previous ways of displaying information did not fit</li>
 </ul>
 <p>:::</p>
 
@@ -1040,7 +1055,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;text=%D0%A0%D0%B5%D1%86%D0%B5%D0%BF%D1%82&#43;%D0%BF%D0%BE&#43;%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E&#43;%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE%D0%B9&#43;%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8&#43;%D1%81&#43;markdown&#43;%D0%B8&#43;beamer" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;text=How&#43;to&#43;make&#43;scientific&#43;presentations&#43;with&#43;markdown&#43;and&#43;beamer" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1057,7 +1072,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;t=%D0%A0%D0%B5%D1%86%D0%B5%D0%BF%D1%82&#43;%D0%BF%D0%BE&#43;%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E&#43;%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE%D0%B9&#43;%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8&#43;%D1%81&#43;markdown&#43;%D0%B8&#43;beamer" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;t=How&#43;to&#43;make&#43;scientific&#43;presentations&#43;with&#43;markdown&#43;and&#43;beamer" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1076,7 +1091,7 @@
         
       
       <li>
-        <a href="mailto:?subject=%D0%A0%D0%B5%D1%86%D0%B5%D0%BF%D1%82%20%D0%BF%D0%BE%20%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E%20%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE%D0%B9%20%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8%20%D1%81%20markdown%20%D0%B8%20beamer&amp;body=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=How%20to%20make%20scientific%20presentations%20with%20markdown%20and%20beamer&amp;body=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1093,7 +1108,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;title=%D0%A0%D0%B5%D1%86%D0%B5%D0%BF%D1%82&#43;%D0%BF%D0%BE&#43;%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E&#43;%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE%D0%B9&#43;%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8&#43;%D1%81&#43;markdown&#43;%D0%B8&#43;beamer" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;title=How&#43;to&#43;make&#43;scientific&#43;presentations&#43;with&#43;markdown&#43;and&#43;beamer" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1110,7 +1125,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=%D0%A0%D0%B5%D1%86%D0%B5%D0%BF%D1%82&#43;%D0%BF%D0%BE&#43;%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E&#43;%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE%D0%B9&#43;%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8&#43;%D1%81&#43;markdown&#43;%D0%B8&#43;beamer%20https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=How&#43;to&#43;make&#43;scientific&#43;presentations&#43;with&#43;markdown&#43;and&#43;beamer%20https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1127,7 +1142,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;title=%D0%A0%D0%B5%D1%86%D0%B5%D0%BF%D1%82&#43;%D0%BF%D0%BE&#43;%D0%BF%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8E&#43;%D0%BD%D0%B0%D1%83%D1%87%D0%BD%D0%BE%D0%B9&#43;%D0%BF%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8&#43;%D1%81&#43;markdown&#43;%D0%B8&#43;beamer" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fkirilldi.github.io%2Fpost%2Fsci_presentation%2F&amp;title=How&#43;to&#43;make&#43;scientific&#43;presentations&#43;with&#43;markdown&#43;and&#43;beamer" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
